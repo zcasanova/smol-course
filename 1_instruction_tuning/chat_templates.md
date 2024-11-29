@@ -1,45 +1,92 @@
 # Chat Templates
 
-Chat templates are essential for structuring interactions between users and AI models. They ensure that the model's responses are consistent and contextually appropriate.
+Chat templates are essential for structuring interactions between language models and users. They provide a consistent format for conversations, ensuring that models understand the context and role of each message while maintaining appropriate response patterns.
 
-## Conversational Format
+## Understanding Chat Templates
 
-The conversational format in chat templates is designed to facilitate natural dialogue. Key components include:
+At their core, chat templates define how conversations should be formatted when communicating with a language model. They include system-level instructions, user messages, and assistant responses in a structured format that the model can understand. This structure helps maintain consistency across interactions and ensures the model responds appropriately to different types of inputs.
 
-- **System Prompts**: Initial instructions or context provided to the model to guide its responses.
-- **Role-based Messages**: Specifies roles such as "user" and "assistant," helping the model understand who is speaking and tailor its responses accordingly.
-- **Dialogue History**: Maintains a history of previous interactions to provide context and continuity in the conversation.
+Here's a basic example of a chat template structure:
 
-This format is particularly effective in applications like customer support and personal assistants, where maintaining a coherent and engaging dialogue is crucial.
+```python
+messages = [
+    {"role": "system", "content": "You are a helpful assistant focused on technical topics."},
+    {"role": "user", "content": "Can you explain what a chat template is?"},
+    {"role": "assistant", "content": "A chat template structures conversations between users and AI models..."}
+]
+```
 
-## Instruction Format
+## System Messages
 
-The instruction format in chat templates focuses on providing clear and actionable tasks for the model. It includes:
+System messages set the foundation for how the model should behave. They act as persistent instructions that influence all subsequent interactions. For example:
 
-- **Explicit Instructions**: Detailed guidelines that outline the task the model needs to perform.
-- **Structured Outputs**: Templates or examples of the expected output, ensuring the model understands the task requirements.
+```python
+system_message = {
+    "role": "system",
+    "content": "You are a professional customer service agent. Always be polite, clear, and helpful."
+}
+```
 
-This format is useful in scenarios where the model needs to execute specific tasks, such as generating reports or answering factual questions.
+## Conversations
 
-## Implementing Chat Templates
+Chat templates maintain context through conversation history, storing previous exchanges between users and the assistant. This allows for more coherent multi-turn conversations:
 
-Models like those using the `ctransformers` library can apply chat templates using methods like `apply_chat_template`. This method formats the input messages according to the defined template, ensuring that the model's output aligns with the expected conversational structure.
+```python
+conversation = [
+    {"role": "user", "content": "I need help with my order"},
+    {"role": "assistant", "content": "I'd be happy to help. Could you provide your order number?"},
+    {"role": "user", "content": "It's ORDER-123"},
+]
+```
 
-### Steps to Implement Chat Templates
+## Implementation with Transformers
 
-1. **Define the Template**: Create a template that includes system prompts, role-based messages, and any necessary dialogue history.
-2. **Apply the Template**: Use the `apply_chat_template` method to format the input messages. This ensures that the model receives the input in a structured format.
-3. **Generate Responses**: Once the template is applied, the model can generate responses that are consistent with the defined conversational or instructional format.
+The transformers library provides built-in support for chat templates. Here's how to use them:
 
-## Benefits of Using Chat Templates
+```python
+from transformers import AutoTokenizer
 
-- **Consistency**: Ensures uniformity in responses, making interactions predictable and reliable.
-- **Contextual Relevance**: Maintains the context of the conversation, improving user experience by providing relevant and timely responses.
-- **Flexibility**: Allows customization to suit specific applications or user interactions, making it adaptable to various use cases.
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-Instruct-v0.1")
 
-## Advanced Features
+messages = [
+    {"role": "system", "content": "You are a helpful coding assistant."},
+    {"role": "user", "content": "Write a Python function to sort a list"},
+]
 
-- **Dynamic Templates**: Incorporate dynamic elements that adjust based on user input or context, enhancing the flexibility and adaptability of the conversation.
-- **Multi-turn Conversations**: Support for multi-turn dialogues where the model can maintain context over several interactions, crucial for complex conversational tasks.
+# Apply the chat template
+formatted_chat = tokenizer.apply_chat_template(
+    messages,
+    tokenize=False,
+    add_generation_prompt=True
+)
+```
 
-For more detailed information, you can refer to the [Hugging Face documentation on chat templating](https://huggingface.co/docs/transformers/main/en/chat_templating). 
+## Custom Formatting
+You can customize how different message types are formatted. For example, adding special tokens or formatting for different roles:
+
+```python
+template = """
+<|system|>{system_message}
+<|user|>{user_message}
+<|assistant|>{assistant_message}
+"""
+```
+
+## Multi-Turn Support
+
+Templates can handle complex multi-turn conversations while maintaining context:
+
+```python
+messages = [
+    {"role": "system", "content": "You are a math tutor."},
+    {"role": "user", "content": "What is calculus?"},
+    {"role": "assistant", "content": "Calculus is a branch of mathematics..."},
+    {"role": "user", "content": "Can you give me an example?"},
+]
+```
+
+
+## Resources
+- [Hugging Face Chat Templating Guide](https://huggingface.co/docs/transformers/main/en/chat_templating)
+- [Transformers Documentation](https://huggingface.co/docs/transformers)
+- [Chat Templates Examples Repository](https://huggingface.co/spaces/huggingface-projects/chat-templates) 
