@@ -2,22 +2,7 @@
 
 This tutorial provides a concise guide on instruction tuning of language models, focusing on the key concepts and steps involved in the process.
 
-## Table of Contents
-- [Instruction Tuning](#instruction-tuning)
-  - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Data Structures](#data-structures)
-  - [Chat Templates](#chat-templates)
-  - [Supervised Fine-Tuning](#supervised-fine-tuning)
-  - [Conclusion](#conclusion)
-
-## Introduction
-
-Instruction tuning involves adapting pre-trained models to specific tasks by further training them on task-specific datasets. This process helps models improve their performance on targeted tasks.
-
-## Data Structures
-
-Understanding the data structures used in instruction tuning is crucial. Two primary formats guide model interactions:
+Instruction tuning involves adapting pre-trained models to specific tasks by further training them on task-specific datasets. This process helps models improve their performance on targeted tasks. Instruction tuning uses two primary formats to guide model interactions:
 
 - **Instruction Format**: Provides explicit tasks for the model to perform.
 - **Conversational Format**: Structures interactions as a dialogue between a user and a system.
