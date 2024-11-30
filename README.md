@@ -41,3 +41,11 @@ Before starting, ensure you have the following:
 - Basic understanding of machine learning and natural language processing.
 - Familiarity with Python, PyTorch, and the `transformers` library.
 - Access to a pre-trained language model and a labeled dataset.
+
+## Installation
+
+All the examples run in the same environment, so you only need to install the dependencies once like this:
+
+```bash
+pip install -r requirements.txt
+```
