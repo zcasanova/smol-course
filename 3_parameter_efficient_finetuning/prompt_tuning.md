@@ -47,8 +47,6 @@ When compared to other PEFT approaches, prompt tuning stands out for its efficie
 | LoRA | Low | Low | Requires Loading |
 | Full Fine-tuning | High | High | New Model Copy |
 
-## Best Practices
-
 When implementing prompt tuning, start with a small number of virtual tokens (8-16) and increase only if the task complexity demands it. Text initialization typically yields better results than random initialization, especially when using task-relevant text. The initialization strategy should reflect the complexity of your target task.
 
 Training requires slightly different considerations than full fine-tuning. Higher learning rates often work well, but careful monitoring of prompt token gradients is essential. Regular validation on diverse examples helps ensure robust performance across different scenarios.
