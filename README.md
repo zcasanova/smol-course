@@ -1,24 +1,27 @@
 # smol-course
 
-A practical guide to using smol language models (SLMs) for your own projects.
+This is a practical and concice guide on aligning smol language models for your specific use case. It's a handy way to get started with aligning language models, because everything runs on most local machines. There's minimal GPU required and no paid services.
 
-The smol-course teaches you how to adapt the smol series of language models for your specific domain or use case. While large language models   have shown impressive capabilities, they often require significant computational resources and can be overkill for focused applications. This course shows you how to:
+The smol-course teaches you how to adapt the smol series of language models for your specific domain or use case. While large language models  have shown impressive capabilities, they often require significant computational resources and can be overkill for focused applications. This course shows you how to:
 
 - Fine-tune smaller, more efficient models for your specific needs
 - Align model outputs with domain requirements and human preferences  
 - Evaluate and improve model performance for your use case
 - Create synthetic datasets for training and evaluation
 
+You can transfer the skills you learn here to larger models and models other than SmolLM2 and SmolVLM, but this course is designed to run on those models.
+
 ## Course Outline
 
 | Module | Description | Status |
 |--------|-------------|--------|
-| [Instruction Tuning](./1_instruction_tuning) | Learn how to fine-tune language models on instruction datasets using supervised learning techniques | ✅ Complete |
-| [Preference Alignment](./2_preference_alignment) | Explore techniques for aligning language models with human preferences using reward modeling and RLHF | 🚧 In Progress |
-| [Parameter-efficient Fine-tuning](./3_parameter_efficient_finetuning) | Learn efficient methods for adapting large language models with minimal computational resources | 📝 Planned |
-| [Evaluation](./4_evaluation) | Understand how to evaluate language models using benchmarks and custom domain-specific metrics | ✅ Complete |
-| [Vision-language Models](./5_vision_language_models) | Explore techniques for aligning multimodal models that work with both text and images | 📝 Planned |
-| [Synthetic Datasets](./6_synthetic_datasets) | Learn how to create and use synthetic datasets for model training and evaluation | 📝 Planned |
+| [Instruction Tuning](./1_instruction_tuning) | Learn supervised fine-tuning, chat templating, and basic instruction following | 🚧 In Progress |
+| [Preference Alignment](./2_preference_alignment) | Explore DPO and ORPO techniques for aligning models with human preferences | 🚧 In Progress |
+| [Parameter-efficient Fine-tuning](./3_parameter_efficient_finetuning) | Learn LoRA, prompt tuning, and efficient adaptation methods | ✅ Complete |
+| [Evaluation](./4_evaluation) | Use automatic benchmarks and create custom domain evaluations | ✅ Complete |
+| [Vision-language Models](./5_vision_language_models) | Adapt multimodal models for vision-language tasks | 📝 Planned |
+| [Synthetic Datasets](./6_synthetic_datasets) | Create and validate synthetic datasets for training | 📝 Planned |
+| [Inference](./7_inference) | Deploy and serve models efficiently | 📝 Planned |
 
 ### Why Small Language Models?
 
