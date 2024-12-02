@@ -3,9 +3,11 @@
 ![smolcourse image](./banner.png)
 
 
-This is a practical and concice guide on aligning smol language models for your specific use case. It's a handy way to get started with aligning language models, because everything runs on most local machines. There's minimal GPU required and no paid services.
+This is a practical and non exhaustive guide on aligning smol language models for your specific use case. It's a handy way to get started with aligning language models, because everything runs on most local machines. There's minimal GPU required and no paid services.
 
-The smol-course teaches you how to adapt the smol series of language models for your specific domain or use case. While large language models  have shown impressive capabilities, they often require significant computational resources and can be overkill for focused applications. This course shows you how to:
+The course is based on the [SmolLM2](https://github.com/huggingface/smollm/tree/main) series of models, but you can transfer the skills you learn here to larger models or other small language models.
+
+While large language models have shown impressive capabilities, they often require significant computational resources and can be overkill for focused applications. This course shows you how to:
 
 - Fine-tune smaller, more efficient models for your specific needs
 - Align model outputs with domain requirements and human preferences  
