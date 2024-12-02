@@ -2,19 +2,7 @@
 
 ![smolcourse image](./banner.png)
 
-
-This is a practical and non exhaustive guide on aligning smol language models for your specific use case. It's a handy way to get started with aligning language models, because everything runs on most local machines. There's minimal GPU required and no paid services.
-
-The course is based on the [SmolLM2](https://github.com/huggingface/smollm/tree/main) series of models, but you can transfer the skills you learn here to larger models or other small language models.
-
-While large language models have shown impressive capabilities, they often require significant computational resources and can be overkill for focused applications. This course shows you how to:
-
-- Fine-tune smaller, more efficient models for your specific needs
-- Align model outputs with domain requirements and human preferences  
-- Evaluate and improve model performance for your use case
-- Create synthetic datasets for training and evaluation
-
-You can transfer the skills you learn here to larger models and models other than SmolLM2 and SmolVLM, but this course is designed to run on those models.
+This is a practical course on aligning smol language models for your specific use case. It's a handy way to get started with aligning language models, because everything runs on most local machines, there's minimal GPU requirements, and no paid services. The course is based on the [SmolLM2](https://github.com/huggingface/smollm/tree/main) series of models, but you can transfer the skills you learn here to larger models or other small language models.
 
 ## Course Outline
 
@@ -31,15 +19,13 @@ You can transfer the skills you learn here to larger models and models other tha
 
 ### Why Small Language Models?
 
-Small language models offer several advantages for domain-specific applications:
+While large language models have shown impressive capabilities, they often require significant computational resources and can be overkill for focused applications. Small language models offer several advantages for domain-specific applications:
 
 - **Efficiency**: Require significantly less computational resources to train and deploy
 - **Customization**: Easier to fine-tune and adapt to specific domains
 - **Control**: Better understanding and control of model behavior
 - **Cost**: Lower operational costs for training and inference
 - **Privacy**: Can be run locally without sending data to external APIs
-
-This course provides a practical, hands-on approach to working with small language models, from initial training through to production deployment.
 
 ## Prerequisites
 
