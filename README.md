@@ -4,6 +4,17 @@
 
 This is a practical course on aligning language models for your specific use case. It's a handy way to get started with aligning language models, because everything runs on most local machines. There are minimal GPU requirements and no paid services. The course is based on the [SmolLM2](https://github.com/huggingface/smollm/tree/main) series of models, but you can transfer the skills you learn here to larger models or other small language models.
 
+## How to use this course
+
+This course is open and peer reviewed. To get invovled with the course __open a pull request__ and submit your work for review.  Here are the steps:
+
+1. Fork the repo
+2. Read the material, make changes, do the exercises, add your own examples.
+3. Open a PR
+4. Get it reviewed and merged
+
+This should help you learn and to build a community driven course that is always improving.
+
 ## Course Outline
 
 This course provides a practical, hands-on approach to working with small language models, from initial training through to production deployment.
@@ -35,17 +46,6 @@ Before starting, ensure you have the following:
 - Basic understanding of machine learning and natural language processing.
 - Familiarity with Python, PyTorch, and the `transformers` library.
 - Access to a pre-trained language model and a labeled dataset.
-
-## How to use this course
-
-This course is open and peer reviewed. To get invovled with the course __open a pull request__ and submit your work for review.  Here are the steps:
-
-1. Fork the repo
-2. Read the material, make changes, do the exercises, add your own examples.
-3. Open a PR
-4. Get it reviewed and merged
-
-This should help you learn and to build a community driven course that is always improving.
 
 ## Installation
 
