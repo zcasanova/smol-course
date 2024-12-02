@@ -1,4 +1,7 @@
-# smol-course
+# a smol course
+
+![smolcourse image](./banner.png)
+
 
 This is a practical and concice guide on aligning smol language models for your specific use case. It's a handy way to get started with aligning language models, because everything runs on most local machines. There's minimal GPU required and no paid services.
 
@@ -13,15 +16,15 @@ You can transfer the skills you learn here to larger models and models other tha
 
 ## Course Outline
 
-| Module | Description | Status |
-|--------|-------------|--------|
-| [Instruction Tuning](./1_instruction_tuning) | Learn supervised fine-tuning, chat templating, and basic instruction following | ✅ Complete |
-| [Preference Alignment](./2_preference_alignment) | Explore DPO and ORPO techniques for aligning models with human preferences | ✅ Complete |
-| [Parameter-efficient Fine-tuning](./3_parameter_efficient_finetuning) | Learn LoRA, prompt tuning, and efficient adaptation methods | 🚧 In Progress |
-| [Evaluation](./4_evaluation) | Use automatic benchmarks and create custom domain evaluations | ✅ Complete |
-| [Vision-language Models](./5_vision_language_models) | Adapt multimodal models for vision-language tasks | 📝 Planned |
-| [Synthetic Datasets](./6_synthetic_datasets) | Create and validate synthetic datasets for training | 📝 Planned |
-| [Inference](./7_inference) | Deploy and serve models efficiently | 📝 Planned |
+| Module | Description | Status | Release Date |
+|--------|-------------|---------|--------------|
+| [Instruction Tuning](./1_instruction_tuning) | Learn supervised fine-tuning, chat templating, and basic instruction following | ✅ Complete | Mar 12, 2024 |
+| [Preference Alignment](./2_preference_alignment) | Explore DPO and ORPO techniques for aligning models with human preferences | ✅ Complete | Mar 14, 2024 |
+| [Parameter-efficient Fine-tuning](./3_parameter_efficient_finetuning) | Learn LoRA, prompt tuning, and efficient adaptation methods | 🚧 In Progress | Mar 16, 2024 |
+| [Evaluation](./4_evaluation) | Use automatic benchmarks and create custom domain evaluations | ✅ Complete | Mar 18, 2024 |
+| [Vision-language Models](./5_vision_language_models) | Adapt multimodal models for vision-language tasks | 📝 Planned | Mar 20, 2024 |
+| [Synthetic Datasets](./6_synthetic_datasets) | Create and validate synthetic datasets for training | 📝 Planned | Mar 22, 2024 |
+| [Inference](./7_inference) | Deploy and serve models efficiently | 📝 Planned | Mar 24, 2024 |
 
 ### Why Small Language Models?
 
