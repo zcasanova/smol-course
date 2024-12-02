@@ -69,7 +69,7 @@ template = """
 <|system|>{system_message}
 <|user|>{user_message}
 <|assistant|>{assistant_message}
-"""
+""".lstrip()
 ```
 
 ## Multi-Turn Support
