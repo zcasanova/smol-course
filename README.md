@@ -17,7 +17,7 @@ You can transfer the skills you learn here to larger models and models other tha
 |--------|-------------|--------|
 | [Instruction Tuning](./1_instruction_tuning) | Learn supervised fine-tuning, chat templating, and basic instruction following | 🚧 In Progress |
 | [Preference Alignment](./2_preference_alignment) | Explore DPO and ORPO techniques for aligning models with human preferences | 🚧 In Progress |
-| [Parameter-efficient Fine-tuning](./3_parameter_efficient_finetuning) | Learn LoRA, prompt tuning, and efficient adaptation methods | ✅ Complete |
+| [Parameter-efficient Fine-tuning](./3_parameter_efficient_finetuning) | Learn LoRA, prompt tuning, and efficient adaptation methods | 🚧 In Progress |
 | [Evaluation](./4_evaluation) | Use automatic benchmarks and create custom domain evaluations | ✅ Complete |
 | [Vision-language Models](./5_vision_language_models) | Adapt multimodal models for vision-language tasks | 📝 Planned |
 | [Synthetic Datasets](./6_synthetic_datasets) | Create and validate synthetic datasets for training | 📝 Planned |
