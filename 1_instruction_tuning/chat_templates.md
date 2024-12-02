@@ -46,7 +46,7 @@ The transformers library provides built-in support for chat templates. Here's ho
 ```python
 from transformers import AutoTokenizer
 
-tokenizer = AutoTokenizer.from_pretrained("mistralai/Mistral-7B-Instruct-v0.1")
+tokenizer = AutoTokenizer.from_pretrained("HuggingFaceTB/SmolLM2-135M-Instruct")
 
 messages = [
     {"role": "system", "content": "You are a helpful coding assistant."},
