@@ -88,6 +88,7 @@ messages = [
 ⏭️ [Next: Supervised Fine-Tuning](./supervised_fine_tuning.md)
 
 ## Resources
+
 - [Hugging Face Chat Templating Guide](https://huggingface.co/docs/transformers/main/en/chat_templating)
 - [Transformers Documentation](https://huggingface.co/docs/transformers)
 - [Chat Templates Examples Repository](https://huggingface.co/spaces/huggingface-projects/chat-templates) 

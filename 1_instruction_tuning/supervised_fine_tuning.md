@@ -16,13 +16,11 @@ For example, if you're developing a customer service application, you might want
 
 ## The Fine-Tuning Process
 
-The supervised fine-tuning process involves several interconnected steps that work together to transform a general-purpose model into a specialized tool:
+The supervised fine-tuning process involves training model weights on a task-specific dataset. 
 
-First, you'll need to prepare a high-quality dataset that represents your target task. This dataset should include diverse examples that cover the range of scenarios your model will encounter. The quality of this data is important - each example should demonstrate the kind of output you want your model to produce.
+First, you'll need to prepare or select a dataset that represents your target task. This dataset should include diverse examples that cover the range of scenarios your model will encounter. The quality of this data is important - each example should demonstrate the kind of output you want your model to produce. Next comes the actual fine-tuning phase, where you'll use frameworks like Hugging Face's `transformers` and `trl` to train the model on your dataset. 
 
-Next comes the actual fine-tuning phase, where you'll use frameworks like Hugging Face's `transformers` and `trl` to train the model on your dataset. 
-
-Throughout the process, continuous evaluation is essential. You'll want to monitor the model's performance on a validation set to ensure it's learning the desired behaviors without losing its general capabilities.
+Throughout the process, continuous evaluation is essential. You'll want to monitor the model's performance on a validation set to ensure it's learning the desired behaviors without losing its general capabilities. In [module 4](../4_evaluation), we'll cover how to evaluate your model.
 
 ## The Role of SFT in Preference Alignment
 
@@ -39,4 +37,5 @@ Built on top of the Hugging Face Transformers library, TRL allows users to direc
 Try out the  to get hands on experience with SFT using TRL.
 
 ⏭️ [Chat Templates Tutorial](./notebooks/chat_templates_example.ipynb)
+
 ⏭️ [Supervised Fine-Tuning Tutorial](./notebooks/supervised_fine_tuning_tutorial.ipynb)
