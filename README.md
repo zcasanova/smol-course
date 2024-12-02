@@ -6,6 +6,8 @@ This is a practical course on aligning smol language models for your specific us
 
 ## Course Outline
 
+This course provides a practical, hands-on approach to working with small language models, from initial training through to production deployment.
+
 | Module | Description | Status | Release Date |
 |--------|-------------|---------|--------------|
 | [Instruction Tuning](./1_instruction_tuning) | Learn supervised fine-tuning, chat templating, and basic instruction following | ✅ Complete | Dec 3, 2024 |
@@ -17,7 +19,7 @@ This is a practical course on aligning smol language models for your specific us
 | [Inference](./7_inference) | Infer with models efficiently | 📝 Planned | Dec 27, 2024 |
 | [Deployment](./8_deplyment) | Deploy and serve models at scale | 📝 Planned | Dec 30, 2024 |
 
-### Why Small Language Models?
+## Why Small Language Models?
 
 While large language models have shown impressive capabilities, they often require significant computational resources and can be overkill for focused applications. Small language models offer several advantages for domain-specific applications:
 
