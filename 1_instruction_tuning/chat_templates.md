@@ -85,6 +85,7 @@ messages = [
 ]
 ```
 
+⏭️ [Next: Supervised Fine-Tuning](./supervised_fine_tuning.md)
 
 ## Resources
 - [Hugging Face Chat Templating Guide](https://huggingface.co/docs/transformers/main/en/chat_templating)

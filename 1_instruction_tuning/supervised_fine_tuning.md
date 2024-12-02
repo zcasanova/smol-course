@@ -36,4 +36,7 @@ Built on top of the Hugging Face Transformers library, TRL allows users to direc
 
 # Next Steps
 
-Try out the [Supervised Fine-Tuning Tutorial](./notebooks/supervised_fine_tuning_tutorial.ipynb) to get hands on experience with SFT using TRL.
+Try out the  to get hands on experience with SFT using TRL.
+
+⏭️ [Chat Templates Tutorial](./notebooks/chat_templates_example.ipynb)
+⏭️ [Supervised Fine-Tuning Tutorial](./notebooks/supervised_fine_tuning_tutorial.ipynb)
