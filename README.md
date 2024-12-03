@@ -4,17 +4,6 @@
 
 This is a practical course on aligning language models for your specific use case. It's a handy way to get started with aligning language models, because everything runs on most local machines. There are minimal GPU requirements and no paid services. The course is based on the [SmolLM2](https://github.com/huggingface/smollm/tree/main) series of models, but you can transfer the skills you learn here to larger models or other small language models.
 
-## How to use this course
-
-This course is open and peer reviewed. To get invovled with the course __open a pull request__ and submit your work for review.  Here are the steps:
-
-1. Fork the repo
-2. Read the material, make changes, do the exercises, add your own examples.
-3. Open a PR
-4. Get it reviewed and merged
-
-This should help you learn and to build a community driven course that is always improving.
-
 ## Course Outline
 
 This course provides a practical, hands-on approach to working with small language models, from initial training through to production deployment.
@@ -29,6 +18,19 @@ This course provides a practical, hands-on approach to working with small langua
 | [Synthetic Datasets](./6_synthetic_datasets) | Create and validate synthetic datasets for training | 📝 Planned | Dec 23, 2024 |
 | [Inference](./7_inference) | Infer with models efficiently | 📝 Planned | Dec 27, 2024 |
 | [Deployment](./8_deplyment) | Deploy and serve models at scale | 📝 Planned | Dec 30, 2024 |
+<div style="background: linear-gradient(to right, #e0f7fa, #e1bee7, orange); padding: 20px; border-radius: 5px; margin-bottom: 20px; color: purple;">
+    <h2>Participtation is open, free, and now!</h2>
+    <p>This course is open and peer reviewed. To get involved with the course <strong>open a pull request</strong> and submit your work for review. Here are the steps:</p>
+    <ol>
+        <li>Fork the repo <a href="https://github.com/huggingface/smol-course/fork">here</a></li>
+        <li>Read the material, make changes, do the exercises, add your own examples.</li>
+        <li>Open a PR</li>
+        <li>Get it reviewed and merged</li>
+    </ol>
+    <p>This should help you learn and to build a community-driven course that is always improving.</p>
+</div>
+
+
 
 ## Why Small Language Models?
 
