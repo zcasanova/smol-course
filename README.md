@@ -18,6 +18,7 @@ This course provides a practical, hands-on approach to working with small langua
 | [Synthetic Datasets](./6_synthetic_datasets) | Create and validate synthetic datasets for training | 📝 Planned | Dec 23, 2024 |
 | [Inference](./7_inference) | Infer with models efficiently | 📝 Planned | Dec 27, 2024 |
 | [Deployment](./8_deplyment) | Deploy and serve models at scale | 📝 Planned | Dec 30, 2024 |
+
 <div style="background: linear-gradient(to right, #e0f7fa, #e1bee7, orange); padding: 20px; border-radius: 5px; margin-bottom: 20px; color: purple;">
     <h2>Participtation is open, free, and now!</h2>
     <p>This course is open and peer reviewed. To get involved with the course <strong>open a pull request</strong> and submit your work for review. Here are the steps:</p>
@@ -29,8 +30,6 @@ This course provides a practical, hands-on approach to working with small langua
     </ol>
     <p>This should help you learn and to build a community-driven course that is always improving.</p>
 </div>
-
-
 
 ## Why Small Language Models?
 
