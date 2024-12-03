@@ -12,10 +12,12 @@ Chat templates structure interactions between users and AI models, ensuring cons
 
 Supervised Fine-Tuning (SFT) is a critical process for adapting pre-trained language models to specific tasks. It involves training the model on a task-specific dataset with labeled examples.For a detailed guide on SFT, including key steps and best practices, see the [Supervised Fine-Tuning](./supervised_fine_tuning.md) page.
 
-## Example Notebooks
+## Exercise Notebooks
 
-- [Chat Templates](./notebooks/chat_templates_example.ipynb)
-- [Supervised Fine-Tuning](./notebooks/supervised_fine_tuning_tutorial.ipynb)
+| Title | Description | Exercise | Link | Colab |
+|-------|-------------|----------|------|-------|
+| Chat Templates | Learn how to use chat templates with SmolLM2 and process datasets into chatml format | 🐢 Convert the `openai/gsm8k` dataset into chatml format <br> 🐕 Convert the `openai/gsm8k` dataset into chatml format | [Notebook](./notebooks/chat_templates_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/1_instruction_tuning/notebooks/chat_templates_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| Supervised Fine-Tuning | Learn how to fine-tune SmolLM2 using the SFTTrainer | 🐢 Use the `HuggingFaceTB/smoltalk` dataset<br>🐕 Try out the `bigcode/the-stack-smol` dataset<br>🦁 Select a dataset for a real world use case | [Notebook](./notebooks/supervised_fine_tuning_tutorial.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/1_instruction_tuning/notebooks/sft_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 
 ## References
 
