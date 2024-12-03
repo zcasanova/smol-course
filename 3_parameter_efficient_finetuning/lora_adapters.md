@@ -13,7 +13,7 @@ config = LoraConfig(
 )
 ```
 
-This configuration can be used with TRL to train a model with LoRA. LoRA marices are known as adapters and can be merged back into the base model.
+This configuration can be used with TRL to train a model with LoRA. LoRA matrices are known as adapters and can be merged back into the base model.
 
 ## Merging LoRA Adapters
 
