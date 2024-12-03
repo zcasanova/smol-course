@@ -8,7 +8,7 @@ Typical alignment methods involve multiple stages:
 1. Supervised Fine-Tuning (SFT) to adapt models to specific domains
 2. Preference alignment (like RLHF or DPO) to improve response quality
 
-Alternative approaches like ORPO combine instruction tuning and preference alignment into a single process. Here, we wil focus on DPO and ORPO algorithms.
+Alternative approaches like ORPO combine instruction tuning and preference alignment into a single process. Here, we will focus on DPO and ORPO algorithms.
 
 If you would like to learn more about the different alignment techniques, you can read more about them in the [Argilla Blog](https://argilla.io/blog/mantisnlp-rlhf-part-8). 
 
