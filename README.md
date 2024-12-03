@@ -10,7 +10,7 @@ This is a practical course on aligning language models for your specific use cas
     <ol>
         <li>Fork the repo <a href="https://github.com/huggingface/smol-course/fork">here</a></li>
         <li>Read the material, make changes, do the exercises, add your own examples.</li>
-        <li>Open a PR</li>
+        <li>Open a PR on the december_2024 branch</li>
         <li>Get it reviewed and merged</li>
     </ol>
     <p>This should help you learn and to build a community-driven course that is always improving.</p>
