@@ -6,10 +6,10 @@ LoRA has become the most widely adopted PEFT method. It works by adding small ra
 from peft import LoraConfig
 
 config = LoraConfig(
-    task_type="CAUSAL_LM",
+    task_type="CAUSAL_LM",  # Task type for the model
     r=8,  # Rank of update matrices
     lora_alpha=32,  # Scale of updates
-    lora_dropout=0.1
+    lora_dropout=0.1,  # Dropout probability for LoRA layers
 )
 ```
 
@@ -21,11 +21,19 @@ After training with LoRA, you might want to merge the adapter weights back into 
 
 The merging process requires attention to memory management and precision. Since you'll need to load both the base model and adapter weights simultaneously, ensure sufficient GPU/CPU memory is available. Using `device_map="auto"` can help with automatic memory management. Maintain consistent precision (e.g., float16) throughout the process, matching the precision used during training and saving the merged model in the same format for deployment. Before deploying, always validate the merged model by comparing its outputs and performance metrics with the adapter-based version.
 
+### Memory Requirements and Precautions
+
+1. Ensure at least 2x the base model size in available memory <br>
+2. For models >10B parameters, consider using device_map="sequential" <br>
+3. Monitor GPU memory usage during merging process <br>
+4. Keep consistent precision throughout the process <br>
+
 ### Basic Merging Process
 
 Here's how to merge a LoRA adapter back into the base model:
 
 ```python
+import torch
 from transformers import AutoModelForCausalLM
 from peft import PeftModel
 
@@ -44,7 +52,11 @@ peft_model = PeftModel.from_pretrained(
 )
 
 # 3. Merge adapter weights with base model
-merged_model = peft_model.merge_and_unload()
+try:
+    merged_model = peft_model.merge_and_unload()
+except RuntimeError as e:
+    print(f"Merging failed: {e}")
+    # Implement fallback strategy or memory optimization
 
 # 4. Save the merged model
 merged_model.save_pretrained("path/to/save/merged_model")
@@ -58,6 +70,52 @@ tokenizer = AutoTokenizer.from_pretrained("base_model_name")
 merged_model.save_pretrained("path/to/save/merged_model")
 tokenizer.save_pretrained("path/to/save/merged_model")
 ```
+
+### Multiple Adapter Composition
+
+You can combine multiple LoRA adapters:
+
+```python
+from peft import PeftModel
+
+def merge_adapters(base_model, adapter_paths, weights=None):
+    """
+    Merge multiple adapters with optional weighting
+    """
+    if weights is None:
+        weights = [1.0] * len(adapter_paths)
+    
+    current_model = base_model
+    for path, weight in zip(adapter_paths, weights):
+        adapter = PeftModel.from_pretrained(current_model, path)
+        current_model = adapter.merge_and_unload(adapter_weight=weight)
+    
+    return current_model
+```
+
+## Recommended Hyperparameters
+
+Task-specific recommendations:
+
+1. **Text Classification:**
+
+- r: 4-8 <br>
+- lora_alpha: 16-32 <br>
+- lora_dropout: 0.05-0.1 <br>
+
+
+2. **Generation Tasks:**
+
+- r: 8-32 <br>
+- lora_alpha: 32-64 <br>
+- lora_dropout: 0.1-0.2 <br>
+
+
+3. **Language Translation:**
+
+- r: 16-64 <br>
+- lora_alpha: 32-128 <br>
+- lora_dropout: 0.1-0.15 <br>
 
 ## Implementation Guide
 
