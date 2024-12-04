@@ -59,3 +59,9 @@ All the examples run in the same environment, so you only need to install the de
 ```bash
 pip install -r requirements.txt
 ```
+
+## Engagement
+
+Let's share this, so that loads of people can learn to finetune LLMs without expensive hardware.
+
+[![Star History Chart](https://api.star-history.com/svg?repos=huggingface/smol-course&type=Date)](https://star-history.com/#huggingface/smol-course&Date)
