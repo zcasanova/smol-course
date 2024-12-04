@@ -1,4 +1,4 @@
-# Offline Reinforcement Learning from Preferences (ORPO)
+# Odds Ratio Preference Optimization (ORPO)
 
 ORPO (Odds Ratio Preference Optimization) is a novel fine-tuning technique that combines fine-tuning and preference alignment into a single unified process. This combined approach offers advantages in efficiency and performance compared to traditional methods like RLHF or DPO.
 

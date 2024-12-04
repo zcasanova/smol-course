@@ -10,7 +10,7 @@ This is a practical course on aligning language models for your specific use cas
     <ol>
         <li>Fork the repo <a href="https://github.com/huggingface/smol-course/fork">here</a></li>
         <li>Read the material, make changes, do the exercises, add your own examples.</li>
-        <li>Open a PR</li>
+        <li>Open a PR on the december_2024 branch</li>
         <li>Get it reviewed and merged</li>
     </ol>
     <p>This should help you learn and to build a community-driven course that is always improving.</p>
@@ -42,6 +42,8 @@ While large language models have shown impressive capabilities, they often requi
 - **Control**: Better understanding and control of model behavior
 - **Cost**: Lower operational costs for training and inference
 - **Privacy**: Can be run locally without sending data to external APIs
+- **Green Technology**: Advocates efficient usage of resources with reduced carbon footprint
+- **Easier Academic Research Development**: Provides an easy starter for academic research with cutting-edge LLMs with less logistical constraints
 
 ## Prerequisites
 
@@ -52,8 +54,20 @@ Before starting, ensure you have the following:
 
 ## Installation
 
-All the examples run in the same environment, so you only need to install the dependencies once like this:
+All the examples run in the same **python 3.10** environment, so you need to install the dependencies once like this:
 
 ```bash
 pip install -r requirements.txt
 ```
+
+**From Google Colab** you can reference the requirements like this
+
+```bash
+pip install -r https://raw.githubusercontent.com/huggingface/smol-course/refs/heads/main/requirements.txt
+```
+
+## Engagement
+
+Let's share this, so that loads of people can learn to finetune LLMs without expensive hardware.
+
+[![Star History Chart](https://api.star-history.com/svg?repos=huggingface/smol-course&type=Date)](https://star-history.com/#huggingface/smol-course&Date)
