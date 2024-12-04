@@ -50,4 +50,4 @@ Compare the model's outputs with the reference model to verify improvement in pr
 
 To get hands-on experience with DPO, try the [DPO Tutorial](./notebooks/dpo_finetuning_example.ipynb). This practical guide will walk you through implementing preference alignment with your own model, from data preparation to training and evaluation. 
 
-After completing the tutorial, you can explore the [ORPO](./orpo.md) to learn about another preference alignment technique.
+After completing the tutorial, you can explore the [ORPO](./orpo.md) page to learn about another preference alignment technique.
