@@ -42,6 +42,8 @@ While large language models have shown impressive capabilities, they often requi
 - **Control**: Better understanding and control of model behavior
 - **Cost**: Lower operational costs for training and inference
 - **Privacy**: Can be run locally without sending data to external APIs
+- **Green Technology**: Advocates efficient usage of resources with reduced carbon footprint
+- **Easier Academic Research Development**: Provides an easy starter for academic research with cutting-edge LLMs with less logistical constraints
 
 ## Prerequisites
 
