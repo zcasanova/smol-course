@@ -1,10 +1,6 @@
 {
     "name": "Smol Course Development Environment",
-<<<<<<< HEAD
-    "image": "mcr.microsoft.com/devcontainers/python:3.10",
-=======
     "image": "mcr.microsoft.com/devcontainers/python:3.12",
->>>>>>> 25df532 (bumped to 3.12)
     "forwardPorts": [
       8888
     ],
