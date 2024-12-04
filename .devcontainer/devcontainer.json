@@ -19,7 +19,10 @@
           "ms-python.black-formatter",
           "njpwerner.autodocstring",
           "matangover.mypy",
-          "ms-python.autopep8"
+          "ms-python.autopep8",
+          "ms-toolsai.jupyter",
+          "ms-toolsai.vscode-jupyter-powertoys",
+          "ms-toolsai.jupyter-hub"
         ]
       }
     },
