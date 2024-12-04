@@ -1,3 +1,9 @@
+// DevContainer configuration for Smol Course Development Environment
+// This file configures a development container with Python 3.12, Jupyter support,
+// and essential Python development extensions. It uses the uv package manager
+// and automatically sets up the Python virtual environment with required dependencies.
+// You can use it with Microsoft VS Code, Codespaces, Daytona.io and other tools that
+// support Dev Containers standard.
 {
     "name": "Smol Course Development Environment",
     "image": "mcr.microsoft.com/devcontainers/python:3.12",
