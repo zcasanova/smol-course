@@ -22,8 +22,8 @@ Supervised Fine-Tuning (SFT) is a critical process for adapting pre-trained lang
 ## References
 
 - [Transformers documentation on chat templates](https://huggingface.co/docs/transformers/main/en/chat_templating)
-- [Script for Supervised Fine-Tuning in TRL]([./scripts/supervised_finetuning.py](https://github.com/huggingface/trl/blob/main/examples/scripts/sft.py))
-- [`SFTTrainer` in TRL]([./chat_templates.md](https://huggingface.co/docs/trl/main/en/sft_trainer))
+- [Script for Supervised Fine-Tuning in TRL](https://github.com/huggingface/trl/blob/main/examples/scripts/sft.py)
+- [`SFTTrainer` in TRL](https://huggingface.co/docs/trl/main/en/sft_trainer)
 - [Direct Preference Optimization Paper](https://arxiv.org/abs/2305.18290)
 - [Supervised Fine-Tuning with TRL](https://huggingface.co/docs/trl/main/en/tutorials/supervised_finetuning)
 - [How to fine-tune Google Gemma with ChatML and Hugging Face TRL](https://www.philschmid.de/fine-tune-google-gemma)
