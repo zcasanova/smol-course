@@ -60,6 +60,12 @@ All the examples run in the same **python 3.10** environment, so you need to ins
 pip install -r requirements.txt
 ```
 
+**From Google Colab** you can reference the requirements like this
+
+```bash
+pip install -r https://raw.githubusercontent.com/huggingface/smol-course/refs/heads/main/requirements.txt
+```
+
 ## Engagement
 
 Let's share this, so that loads of people can learn to finetune LLMs without expensive hardware.
