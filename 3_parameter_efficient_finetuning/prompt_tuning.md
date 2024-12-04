@@ -35,6 +35,19 @@ model = get_peft_model(model, peft_config)
 
 The core of prompt tuning revolves around virtual tokens, which are trainable embeddings added to the input. These typically number between 8 and 32 tokens and can be initialized either randomly or from existing text. The initialization method plays a crucial role in the training process, with text-based initialization often performing better than random initialization.
 
+### Virtual Tokens
+
+1. Number: Typically 8-32 tokens
+2. Initialization: Text-based (recommended) or random
+3. Training: Only prompt parameters are updated
+4. Learning Rate: Higher rates often work better than standard fine-tuning
+
+### Memory Requirements
+
+1. Base Model: Loaded in 8-bit or 16-bit precision
+2. Prompt Vectors: Negligible memory footprint
+3. Training: Requires gradient computation only for prompt tokens
+
 During training, only the prompt parameters are updated while the base model remains frozen. This focused approach uses standard training objectives but requires careful attention to the learning rate and gradient behavior of the prompt tokens.
 
 ## Comparison with Other Methods
@@ -51,13 +64,60 @@ When implementing prompt tuning, start with a small number of virtual tokens (8-
 
 Training requires slightly different considerations than full fine-tuning. Higher learning rates often work well, but careful monitoring of prompt token gradients is essential. Regular validation on diverse examples helps ensure robust performance across different scenarios.
 
+## Performance Considerations
+
+### Model Size Impact
+
+1. Large Models (>10B parameters): Excellent performance
+2. Medium Models (1B-10B): Good performance
+3. Small Models (<1B): May need more virtual tokens
+
+### Task Types
+
+1. Classification: Strong performance
+2. Generation: Good for structured outputs
+3. QA: Effective with task-specific prompts
+
+## Troubleshooting
+
+Common issues and solutions:
+
+1. Poor Performance
+
+- Increase number of virtual tokens
+- Try text-based initialization
+- Adjust learning rate
+
+
+2. Memory Issues
+
+- Use 8-bit training
+- Reduce batch size
+- Optimize number of virtual tokens
+
+
+3. Task Adaptation
+
+- Experiment with prompt initialization text
+- Consider task-specific prompt lengths
+- Fine-tune prompt tuning hyperparameters
+
 ## Applications
 
-Prompt tuning excels in several scenarios, particularly for classification tasks and simple generation tasks. Its minimal resource requirements make it ideal for environments with limited computational resources. The ability to quickly switch between tasks also makes it valuable for multi-task applications where different behaviors are needed at different times.
+Prompt tuning excels in several scenarios:
+
+1. Multi-task deployment
+2. Resource-constrained environments
+3. Rapid task adaptation
+4. Privacy-sensitive applications
 
 ## Next Steps
 
-To get hands-on experience with prompt tuning, try the [Prompt Tuning Tutorial](./notebooks/prompt_tuning_example.ipynb). This practical guide will walk you through implementing the technique with your own model and data.
+To get hands-on experience with prompt tuning:
+1. Try the [Prompt Tuning Tutorial](./notebooks/prompt_tuning_example.ipynb). This practical guide will walk you through implementing the technique with your own model and data.
+2. Experiment with different initialization strategies
+3. Compare performance across model sizes
+4. Test on various downstream tasks
 
 ## Resources
 - [PEFT Documentation](https://huggingface.co/docs/peft)
