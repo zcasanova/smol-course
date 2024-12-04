@@ -1,6 +1,6 @@
 # Instruction Tuning
 
-This module will you guide you through instruction tuning language models. Instruction tuning involves adapting pre-trained models to specific tasks by further training them on task-specific datasets. This process helps models improve their performance on targeted tasks. 
+This module will guide you through instruction tuning language models. Instruction tuning involves adapting pre-trained models to specific tasks by further training them on task-specific datasets. This process helps models improve their performance on targeted tasks. 
 
 In this module, we will explore two topics: 1) Chat Templates and 2) Supervised Fine-Tuning.
 
@@ -10,7 +10,7 @@ Chat templates structure interactions between users and AI models, ensuring cons
 
 ## 2️⃣ Supervised Fine-Tuning
 
-Supervised Fine-Tuning (SFT) is a critical process for adapting pre-trained language models to specific tasks. It involves training the model on a task-specific dataset with labeled examples.For a detailed guide on SFT, including key steps and best practices, see the [Supervised Fine-Tuning](./supervised_fine_tuning.md) page.
+Supervised Fine-Tuning (SFT) is a critical process for adapting pre-trained language models to specific tasks. It involves training the model on a task-specific dataset with labeled examples. For a detailed guide on SFT, including key steps and best practices, see the [Supervised Fine-Tuning](./supervised_fine_tuning.md) page.
 
 ## Exercise Notebooks
 
