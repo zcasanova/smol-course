@@ -36,7 +36,7 @@ The Transformers Reinforcement Learning (TRL) library makes implementing DPO str
 Here's a basic example of setting up DPO training:
 
 ```python
-from trl import DPOTrainer
+from trl import DPOConfig, DPOTrainer
 
 # Define arguments
 training_args = DPOConfig(
