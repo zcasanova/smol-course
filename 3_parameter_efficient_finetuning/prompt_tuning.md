@@ -66,11 +66,7 @@ As models get smaller, prompt tuning becomes less competitive compared to full f
 
 ## Next Steps
 
-To get hands-on experience with prompt tuning:
-1. Try the [Prompt Tuning Tutorial](./notebooks/prompt_tuning_example.ipynb). This practical guide will walk you through implementing the technique with your own model and data.
-2. Experiment with different initialization strategies
-3. Compare performance across model sizes
-4. Test on various downstream tasks
+⏭️ Move on to the [LoRA Adapters Tutorial](./notebooks/finetuning_lora_adapters.ipynb) to learn how to fine-tune a model with LoRA adapters.
 
 ## Resources
 - [PEFT Documentation](https://huggingface.co/docs/peft)

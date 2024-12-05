@@ -96,8 +96,7 @@ tokenizer.save_pretrained("path/to/save/merged_model")
 ## Next Steps
 
 ⏩ Move on to the [Prompt Tuning](prompt_tuning.md) guide to learn how to fine-tune a model with prompt tuning.
-⏩ Move on the [LoRA Adapters Tutorial](./notebooks/finetuning_lora_adapters.ipynb) to learn how to load LoRA adapters.
-⏭️ Move on to the [LoRA Adapters Tutorial](./notebooks/finetuning_lora_adapters.ipynb) to learn how to fine-tune a model with LoRA adapters.
+⏩ Move on the [Load LoRA Adapters Tutorial](./notebooks/load_lora_adapter.ipynb) to learn how to load LoRA adapters.
 
 # Resources
 
