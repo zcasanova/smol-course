@@ -11,17 +11,13 @@ Traditional fine-tuning updates all model parameters during training, which beco
 
 ## Available Methods
 
-### [LoRA (Low-Rank Adaptation)](./lora_adapters.md)
+### 1️⃣ LoRA (Low-Rank Adaptation)
 
-LoRA has emerged as the most widely adopted PEFT method, offering an elegant solution to efficient model adaptation. Instead of modifying the entire model, LoRA injects trainable rank decomposition matrices into the model's attention layers. This approach typically reduces trainable parameters by about 90% while maintaining comparable performance to full fine-tuning.
+LoRA has emerged as the most widely adopted PEFT method, offering an elegant solution to efficient model adaptation. Instead of modifying the entire model, LoRA injects trainable rank decomposition matrices into the model's attention layers. This approach typically reduces trainable parameters by about 90% while maintaining comparable performance to full fine-tuning. [LoRA (Low-Rank Adaptation)](./lora_adapters.md)
+ 
+### 2️⃣ Prompt Tuning](./prompt_tuning.md)
 
-### [Prompt Tuning](./prompt_tuning.md)
-
-Prompt tuning offers an even lighter approach by adding trainable tokens to the input rather than modifying model weights.
-
-The `notebooks/` directory contains practical examples:
-- `lora_finetuning.ipynb`: Complete LoRA implementation walkthrough
-- `prompt_tuning_example.ipynb`: Guide to effective prompt tuning
+Prompt tuning offers an even lighter approach by adding trainable tokens to the input rather than modifying model weights. [Prompt Tuning](./prompt_tuning.md)
 
 ## Resources
 - [PEFT Documentation](https://huggingface.co/docs/peft)
