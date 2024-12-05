@@ -66,7 +66,7 @@ As models get smaller, prompt tuning becomes less competitive compared to full f
 
 ## Next Steps
 
-⏭️ Move on to the [LoRA Adapters Tutorial](./notebooks/finetuning_lora_adapters.ipynb) to learn how to fine-tune a model with LoRA adapters.
+⏭️ Move on to the [LoRA Adapters Tutorial](./notebooks/finetune_sft_peft.ipynb) to learn how to fine-tune a model with LoRA adapters.
 
 ## Resources
 - [PEFT Documentation](https://huggingface.co/docs/peft)
