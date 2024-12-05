@@ -18,15 +18,15 @@ The core innovation of DPO lies in its direct optimization approach. Rather than
 
 ## DPO datasets
 
-Datasets for DPO are typically created by annotating pairs of responses as preferred or non-preferred. This can be done manually or using automated filtering techniques. Below is an example structure of a DPO dataset:
+Datasets for DPO are typically created by annotating pairs of responses as preferred or non-preferred. This can be done manually or using automated filtering techniques. Below is an example structure of single turn preference dataset for DPO:
 
-| Input | Prompt | Chosen | Rejected |
-|-------|--------|--------|----------|
-| ...   | ...    | ...    | ...      |
-| ...   | ...    | ...    | ...      |
-| ...   | ...    | ...    | ...      |
+| Prompt | Chosen | Rejected |
+|--------|--------|----------|
+| ...    | ...    | ...      |
+| ...    | ...    | ...      |
+| ...    | ...    | ...      |
 
-The `Input` column contains the input prompt for the model. The `Prompt` column contains the prompt used to generate the `Chosen` and `Rejected` responses. The `Chosen` and `Rejected` columns contain the responses that are preferred and non-preferred respectively. There are variations on this structure, for example, including a system prompt column or no `Input` or `Prompt` columns. The values of `chosen` and `rejected` can be be represented as strings or as conversation lists. 
+The `Prompt` column contains the prompt used to generate the `Chosen` and `Rejected` responses. The `Chosen` and `Rejected` columns contain the responses that are preferred and non-preferred respectively. There are variations on this structure, for example, including a system prompt column or `Input` column containing reference material. The values of `chosen` and `rejected` can be be represented as strings for single turn conversations or as conversation lists. 
 
 You can find a collection of DPO datasets on Hugging Face [here](https://huggingface.co/collections/argilla/preference-datasets-for-dpo-656f0ce6a00ad2dc33069478).
 
@@ -36,7 +36,7 @@ The Transformers Reinforcement Learning (TRL) library makes implementing DPO str
 Here's a basic example of setting up DPO training:
 
 ```python
-from trl import DPOTrainer
+from trl import DPOConfig, DPOTrainer
 
 # Define arguments
 training_args = DPOConfig(
