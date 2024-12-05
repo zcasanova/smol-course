@@ -66,6 +66,7 @@ pyarrow==18.1.0
 pycparser==2.22 ; implementation_name == 'pypy'
 pygments==2.18.0
 python-dateutil==2.9.0.post0
+python-dotenv==1.0.1
 pytz==2024.2
 pywin32==308 ; platform_python_implementation != 'PyPy' and sys_platform == 'win32'
 pyyaml==6.0.2
