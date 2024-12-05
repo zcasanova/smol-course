@@ -55,6 +55,7 @@ Above, we used `device_map="auto"` to automatically assign the model to the corr
 After training a LoRA adapter, you can merge the adapter weights back into the base model. Here's how to do it:
 
 ```python
+import torch
 from transformers import AutoModelForCausalLM
 from peft import PeftModel
 
@@ -73,7 +74,11 @@ peft_model = PeftModel.from_pretrained(
 )
 
 # 3. Merge adapter weights with base model
-merged_model = peft_model.merge_and_unload()
+try:
+    merged_model = peft_model.merge_and_unload()
+except RuntimeError as e:
+    print(f"Merging failed: {e}")
+    # Implement fallback strategy or memory optimization
 
 # 4. Save the merged model
 merged_model.save_pretrained("path/to/save/merged_model")

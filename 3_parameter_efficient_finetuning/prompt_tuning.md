@@ -14,7 +14,6 @@ Soft prompts typically number between 8 and 32 tokens and can be initialized eit
 
 During training, only the prompt parameters are updated while the base model remains frozen. This focused approach uses standard training objectives but requires careful attention to the learning rate and gradient behavior of the prompt tokens.
 
-
 ## Implementation with PEFT
 
 The PEFT library makes implementing prompt tuning straightforward. Here's a basic example:
@@ -56,13 +55,22 @@ Training requires slightly different considerations than full fine-tuning. Highe
 
 ## Application
 
-Prompt tuning excels in several scenarios, particularly for classification tasks and simple generation tasks. Its minimal resource requirements make it ideal for environments with limited computational resources. The ability to quickly switch between tasks also makes it valuable for multi-task applications where different behaviors are needed at different times.
+Prompt tuning excels in several scenarios:
+
+1. Multi-task deployment
+2. Resource-constrained environments
+3. Rapid task adaptation
+4. Privacy-sensitive applications
 
 As models get smaller, prompt tuning becomes less competitive compared to full fine-tuning. For example, on models like SmolLM2 scales prompt tuning is less relevant than full fine-tuning. 
 
 ## Next Steps
 
-To get hands-on experience with prompt tuning, try the [Prompt Tuning Tutorial](./notebooks/prompt_tuning_example.ipynb). This practical guide will walk you through implementing the technique with your own model and data.
+To get hands-on experience with prompt tuning:
+1. Try the [Prompt Tuning Tutorial](./notebooks/prompt_tuning_example.ipynb). This practical guide will walk you through implementing the technique with your own model and data.
+2. Experiment with different initialization strategies
+3. Compare performance across model sizes
+4. Test on various downstream tasks
 
 ## Resources
 - [PEFT Documentation](https://huggingface.co/docs/peft)
