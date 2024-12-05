@@ -58,7 +58,7 @@ Before starting, ensure you have the following:
 
 ## Installation
 
-All the examples run in the same **python 3.10** environment, so you need to install the dependencies once like this:
+All the examples run in the same **python 3.11** environment, so you need to install the dependencies once like this:
 
 ```bash
 pip install -r requirements.txt
