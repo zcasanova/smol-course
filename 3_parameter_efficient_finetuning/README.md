@@ -32,5 +32,8 @@ Prompt tuning offers an even lighter approach by adding trainable tokens to the 
 ## Resources
 - [PEFT Documentation](https://huggingface.co/docs/peft)
 - [LoRA Paper](https://arxiv.org/abs/2106.09685)
+- [QLoRA Paper](https://arxiv.org/abs/2305.14314)
 - [Prompt Tuning Paper](https://arxiv.org/abs/2104.08691)
 - [Hugging Face PEFT Guide](https://huggingface.co/blog/peft)
+- [How to Fine-Tune LLMs in 2024 with Hugging Face](https://www.philschmid.de/fine-tune-llms-in-2024-with-trl) 
+- [TRL](https://huggingface.co/docs/trl/index)
