@@ -58,16 +58,33 @@ Before starting, ensure you have the following:
 
 ## Installation
 
-All the examples run in the same **python 3.10** environment, so you need to install the dependencies once like this:
+We maintain the course as a package so you can install dependencies easily via a package manager. We recommend [uv](https://github.com/astral-sh/uv) for this purpose, but you could use alternatives like `pip` or `pdm`.
+
+### Using `uv`
+
+With `uv` installed, you can install the course like this:
 
 ```bash
+uv venv --python 3.11.0
+uv sync
+```
+
+### Using `pip`
+
+All the examples run in the same **python 3.11** environment, so you should create an environment and install dependencies like this:
+
+```bash
+# python -m venv .venv
+# source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-**From Google Colab** you can reference the requirements like this
+### Google Colab
+
+**From Google Colab** you will need to install dependencies flexibly based on the hardware you're using. Like this:
 
 ```bash
-pip install -r https://raw.githubusercontent.com/huggingface/smol-course/refs/heads/main/requirements.txt
+pip install -r transformers trl datasets huggingface_hub
 ```
 
 ## Engagement
