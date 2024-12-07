@@ -4,7 +4,9 @@
 
 Vision Language Models (VLMs) process image inputs alongside text to enable tasks like image captioning, visual question answering, and multimodal reasoning.  
 
-These models leverage pre-trained architectures to understand visual content and generate or process text based on it, enabling a wide array of applications across domains like healthcare, autonomous driving, and multimedia search.  
+A typical VLM architecture consists of an image encoder to extract visual features, a projection layer to align visual and textual representations, and a language model to process or generate text. This allows the model to establish connections between visual elements and language concepts.
+
+VLMs can be used in different configurations depending on the use case. Base models handle general vision-language tasks, while chat-optimized variants support conversational interactions. Some models include additional components for grounding predictions in visual evidence or specializing in specific tasks like object detection.
 
 For more on the technicality and usage of VLMs, refer to the [VLM Usage](./vlm_usage.md) page.  
 
