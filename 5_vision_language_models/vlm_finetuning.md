@@ -92,8 +92,8 @@ Preference datasets must capture clear preferences between candidate outputs. Fo
 
 ## Resources
 
-- https://huggingface.co/learn/cookbook/fine_tuning_vlm_trl
-- https://huggingface.co/blog/dpo_vlm
+- [Hugging Face Learn: Supervised Fine-Tuning VLMs](https://huggingface.co/learn/cookbook/fine_tuning_vlm_trl)  
+- [Hugging Face Blog: Preference Optimization for VLMs](https://huggingface.co/blog/dpo_vlm)
 
 ## Next Steps
 
