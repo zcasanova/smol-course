@@ -10,10 +10,11 @@ VLMs can be used in different configurations depending on the use case. Base mod
 
 For more on the technicality and usage of VLMs, refer to the [VLM Usage](./vlm_usage.md) page.  
 
-
 ## 2. VLM Fine-Tuning  
 
-Fine-tuning a VLM involves adapting a pre-trained model to perform specific tasks or to operate effectively on a particular dataset. This process customizes the model's capabilities while leveraging the knowledge it has acquired during pre-training. For a detailed guide on fine-tuning for VLMs, see the [VLM Fine-Tuning](./vlm_finetuning.md) page.
+Fine-tuning a VLM involves adapting a pre-trained model to perform specific tasks or to operate effectively on a particular dataset. The process can follow methodologies such as supervised fine-tuning, preference optimization, or a hybrid approach that combines both, as introduced in Modules 1 and 2.  
+
+While the core tools and techniques remain similar to those used for LLMs, fine-tuning VLMs requires additional focus on data representation and preparation for images. This ensures the model effectively integrates and processes both visual and textual data for optimal performance. For detailed guidance on fine-tuning VLMs, visit the [VLM Fine-Tuning](./vlm_finetuning.md) page.  
 
 
 ## Exercise Notebooks  
