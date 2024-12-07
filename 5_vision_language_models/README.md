@@ -14,7 +14,9 @@ For more on the technicality and usage of VLMs, refer to the [VLM Usage](./vlm_u
 
 Fine-tuning a VLM involves adapting a pre-trained model to perform specific tasks or to operate effectively on a particular dataset. The process can follow methodologies such as supervised fine-tuning, preference optimization, or a hybrid approach that combines both, as introduced in Modules 1 and 2.  
 
-While the core tools and techniques remain similar to those used for LLMs, fine-tuning VLMs requires additional focus on data representation and preparation for images. This ensures the model effectively integrates and processes both visual and textual data for optimal performance. For detailed guidance on fine-tuning VLMs, visit the [VLM Fine-Tuning](./vlm_finetuning.md) page.  
+While the core tools and techniques remain similar to those used for LLMs, fine-tuning VLMs requires additional focus on data representation and preparation for images. This ensures the model effectively integrates and processes both visual and textual data for optimal performance. Given that the demo model, SmolVLM, is significantly larger than the language model used in the previous module, it's essential to explore methods for efficient fine-tuning. Techniques like quantization and PEFT can help make the process more accessible and cost-effective, allowing more users to experiment with the model. 
+
+For detailed guidance on fine-tuning VLMs, visit the [VLM Fine-Tuning](./vlm_finetuning.md) page.  
 
 
 ## Exercise Notebooks  
@@ -27,11 +29,10 @@ While the core tools and techniques remain similar to those used for LLMs, fine-
 
 
 ## References  
+- [Hugging Face Learn: Supervised Fine-Tuning VLMs](https://huggingface.co/learn/cookbook/fine_tuning_vlm_trl)  
+- [Hugging Face Blog: Preference Optimization for VLMs](https://huggingface.co/blog/dpo_vlm)
 - [Hugging Face Blog: Vision Language Models](https://huggingface.co/blog/vlms)
 - [Hugging Face Blog: SmolVLM](https://huggingface.co/blog/smolvlm)  
 - [Hugging Face Model: SmolVLM-Instruct](https://huggingface.co/HuggingFaceTB/SmolVLM-Instruct)
-- [Hugging Face Learn: Fine-Tuning VLMs](https://huggingface.co/learn/cookbook/fine_tuning_vlm_trl)  
 - [CLIP: Learning Transferable Visual Models from Natural Language Supervision](https://arxiv.org/abs/2103.00020)  
 - [Align Before Fuse: Vision and Language Representation Learning with Momentum Distillation](https://arxiv.org/abs/2107.07651)  
-
-<!-- https://discuss.huggingface.co/t/smolvlm-8bit-quantization-problem/128287 -->
