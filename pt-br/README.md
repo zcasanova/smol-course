@@ -2,75 +2,75 @@
 
 # a smol course (um curso miudinho)
 
-This is a practical course on aligning language models for your specific use case. It's a handy way to get started with aligning language models, because everything runs on most local machines. There are minimal GPU requirements and no paid services. The course is based on the [SmolLM2](https://github.com/huggingface/smollm/tree/main) series of models, but you can transfer the skills you learn here to larger models or other small language models.
+Este é um curso prático sobre alinhar modelos de linguagem para o seu caso de uso específico. É uma maneira útil de começar a alinhar modelos de linguagem, porque tudo funciona na maioria das máquinas locais. Existem requisitos mínimos de GPU e nenhum serviço pago. O curso é baseado na série de modelos de [Smollm2] (https://github.com/huggingface/smollm/tree/main), mas você pode transferir as habilidades que aprende aqui para modelos maiores ou outros pequenos modelos de linguagem.
 
 <a href="http://hf.co/join/discord">
 <img src="https://img.shields.io/badge/Discord-7289DA?&logo=discord&logoColor=white"/>
 </a>
 
 <div style="background: linear-gradient(to right, #e0f7fa, #e1bee7, orange); padding: 20px; border-radius: 5px; margin-bottom: 20px; color: purple;">
-    <h2>Participation is open, free, and now!</h2>
-    <p>This course is open and peer reviewed. To get involved with the course <strong>open a pull request</strong> and submit your work for review. Here are the steps:</p>
+    <h2>A participação está aberta, é gratuita e já está disponível!</h2>
+    <p>Este curso é aberto e avaliado por pares (peer reviewed). Para começar o curso, <strong>abra um pull request (PR)</strong> e envie seu trabalho para revisão. Aqui estão as etapas:</p>
     <ol>
-        <li>Fork the repo <a href="https://github.com/huggingface/smol-course/fork">here</a></li>
-        <li>Read the material, make changes, do the exercises, add your own examples.</li>
-        <li>Open a PR on the december_2024 branch</li>
-        <li>Get it reviewed and merged</li>
+        <li>Dê um fork no repositório <a href="https://github.com/huggingface/smol-course/fork">aqui</a></li>
+        <li>Leia o material, faça alterações, faça os exercícios, adicione seus próprios exemplos</li>
+        <li>Abra um PR no branch december_2024</li>
+        <li>Tenha seu material revisado e mesclado no branch principal</li>
     </ol>
-    <p>This should help you learn and to build a community-driven course that is always improving.</p>
+    <p>Isso deve te ajudar a aprender e a construir um curso feito pela comunidade, que está sempre melhorando.</p>
 </div>
 
-We can discuss the process in this [discussion thread](https://github.com/huggingface/smol-course/discussions/2#discussion-7602932).
+Podemos discutir o processo neste [tópico de discussão](https://github.com/huggingface/smol-course/discussions/2#discussion-7602932).
 
-## Course Outline
+## Sumário do Curso
 
-This course provides a practical, hands-on approach to working with small language models, from initial training through to production deployment.
+Este curso fornece uma abordagem prática para trabalhar com pequenos modelos de linguagem, desde o treinamento inicial até a implantação de produção.
 
-| Module | Description | Status | Release Date |
+| Módulo | Descrição | Status | Data de Lançamento |
 |--------|-------------|---------|--------------|
-| [Instruction Tuning](./1_instruction_tuning) | Learn supervised fine-tuning, chat templating, and basic instruction following | ✅ Complete | Dec 3, 2024 |
-| [Preference Alignment](./2_preference_alignment) | Explore DPO and ORPO techniques for aligning models with human preferences | ✅ Complete  | Dec 6, 2024 |
-| [Parameter-efficient Fine-tuning](./3_parameter_efficient_finetuning) | Learn LoRA, prompt tuning, and efficient adaptation methods | [🚧 WIP](https://github.com/huggingface/smol-course/pull/41) | Dec 9, 2024 |
-| [Evaluation](./4_evaluation) | Use automatic benchmarks and create custom domain evaluations | [🚧 WIP](https://github.com/huggingface/smol-course/issues/42) | Dec 13, 2024 |
-| [Vision-language Models](./5_vision_language_models) | Adapt multimodal models for vision-language tasks | [🚧 WIP](https://github.com/huggingface/smol-course/issues/49) | Dec 16, 2024 |
-| [Synthetic Datasets](./6_synthetic_datasets) | Create and validate synthetic datasets for training | 📝 Planned | Dec 20, 2024 |
-| [Inference](./7_inference) | Infer with models efficiently | 📝 Planned | Dec 23, 2024 |
+| [Instruction Tuning (Ajuste de Instrução)](./1_instruction_tuning) | Aprenda sobre o ajuste fino supervisionado, modelos de bate-papo e a fazer o modelo seguir instruções básicas | ✅ Completo | 3 Dez, 2024 |
+| [Preference Alignment (Alinhamento de Preferência)](./2_preference_alignment) | Explore técnicas DPO e ORPO para alinhar modelos com preferências humanas | ✅ Completo  | 6 Dez, 2024 |
+| [Parameter-efficient Fine-tuning (Ajuste Fino com Eficiência de Parâmetro)](./3_parameter_efficient_finetuning) | Aprenda sobre LoRA, ajuste de prompt e métodos de adaptação eficientes | [🚧 Em Progresso](https://github.com/huggingface/smol-course/pull/41) | 9 Dez, 2024 |
+| [Evaluation (Avaliação)](./4_evaluation) | Use benchmarks automáticos e crie avaliações de domínio personalizadas | [🚧 Em Progresso](https://github.com/huggingface/smol-course/issues/42) | 13 Dez, 2024 |
+| [Vision-language Models (Modelos de Conjunto Visão-linguagem)](./5_vision_language_models) | Adapte modelos multimodais para tarefas visão-linguagem | [🚧 Em Progresso](https://github.com/huggingface/smol-course/issues/49) | 16 Dez, 2024 |
+| [Synthetic Datasets (Conjuntos de Dados Sintéticos)](./6_synthetic_datasets) | Criar e validar conjuntos de dados sintéticos para treinamento | 📝 Planejado | 20 Dez, 2024 |
+| [Inference (Inferência)](./7_inference) | Infira modelos com eficiência | 📝 Planejado | 23 Dez, 2024 |
 
-## Why Small Language Models?
+## Por Que Pequenos Modelos de Linguagem?
 
-While large language models have shown impressive capabilities, they often require significant computational resources and can be overkill for focused applications. Small language models offer several advantages for domain-specific applications:
+Embora os grandes modelos de linguagem tenham mostrado recursos e capacidades impressionantes, eles geralmente exigem recursos computacionais significativos e podem ser exagerados para aplicativos focados.Os pequenos modelos de linguagem oferecem várias vantagens para aplicativos de domínios específicos:
 
-- **Efficiency**: Require significantly less computational resources to train and deploy
-- **Customization**: Easier to fine-tune and adapt to specific domains
-- **Control**: Better understanding and control of model behavior
-- **Cost**: Lower operational costs for training and inference
-- **Privacy**: Can be run locally without sending data to external APIs
-- **Green Technology**: Advocates efficient usage of resources with reduced carbon footprint
-- **Easier Academic Research Development**: Provides an easy starter for academic research with cutting-edge LLMs with less logistical constraints
+- **Eficiência**: Requer significativamente menos recursos computacionais para treinar e implantar
+- **Personalização**: Mais fácil de ajustar e se adaptar a domínios específicos
+- **Controle**: Melhor compreensão e controle do comportamento do modelo
+- **Custo**: Menores custos operacionais para treinamento e inferência
+- **Privacidade**: Pode ser executado localmente sem enviar dados para APIs externas
+- **Tecnologia Verde**: Defende o uso eficiente de recursos com redução da pegada de carbono 
+- **Desenvolvimento de Pesquisa Acadêmica Mais Fácil**: Oferece um ponto de partida fácil para a pesquisa acadêmica com LLMs de ponta com menos restrições logísticas
 
-## Prerequisites
+## Pré-requisitos
 
-Before starting, ensure you have the following:
-- Basic understanding of machine learning and natural language processing.
-- Familiarity with Python, PyTorch, and the `transformers` library.
-- Access to a pre-trained language model and a labeled dataset.
+Antes de começar, verifique se você tem o seguinte:
+- Entendimento básico de machine learning e natural language processing.
+- Familiaridade com Python, PyTorch e o módulo `transformers`.
+- Acesso a um modelo de linguagem pré-treinado e um conjunto de dados rotulado.
 
-## Installation
+## Instalação
 
-We maintain the course as a package so you can install dependencies easily via a package manager. We recommend [uv](https://github.com/astral-sh/uv) for this purpose, but you could use alternatives like `pip` or `pdm`.
+Mantemos o curso como um pacote para que você possa instalar dependências facilmente por meio de um gerenciador de pacotes. Recomendamos [uv](https://github.com/astral-sh/uv) para esse fim, mas você pode usar alternativas como `pip` ou` pdm`.
 
-### Using `uv`
+### Usando `uv`
 
-With `uv` installed, you can install the course like this:
+Com o `uv` instalado, você pode instalar o curso deste modo:
 
 ```bash
 uv venv --python 3.11.0
 uv sync
 ```
 
-### Using `pip`
+### Usando `pip`
 
-All the examples run in the same **python 3.11** environment, so you should create an environment and install dependencies like this:
+Todos os exemplos são executados no mesmo ambiente **python 3.11**, então você deve criar um ambiente e instalar dependências desta maneira:
 
 ```bash
 # python -m venv .venv
@@ -80,14 +80,14 @@ pip install -r requirements.txt
 
 ### Google Colab
 
-**From Google Colab** you will need to install dependencies flexibly based on the hardware you're using. Like this:
+**A partir do Google Colab** você precisará instalar dependências de maneira flexível com base no hardware que está usando. Pode fazer deste jeito:
 
 ```bash
 pip install -r transformers trl datasets huggingface_hub
 ```
 
-## Engagement
+## Engajamento
 
-Let's share this, so that loads of people can learn to finetune LLMs without expensive hardware.
+Vamos compartilhar isso, desse jeito um monte de gente vai poder aprender a ajustar LLMs sem precisar de um computador super caro.
 
-[![Star History Chart](https://api.star-history.com/svg?repos=huggingface/smol-course&type=Date)](https://star-history.com/#huggingface/smol-course&Date)
+[![Gráfico de Histórico de Estrelas](https://api.star-history.com/svg?repos=huggingface/smol-course&type=Date)](https://star-history.com/#huggingface/smol-course&Date)
