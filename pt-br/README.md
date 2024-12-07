@@ -9,7 +9,7 @@ Este é um curso prático sobre alinhar modelos de linguagem para o seu caso de 
 </a>
 
 <div style="background: linear-gradient(to right, #e0f7fa, #e1bee7, orange); padding: 20px; border-radius: 5px; margin-bottom: 20px; color: purple;">
-    <h2>A participação está aberta, é gratuita e já está disponível!</h2>
+    <h2>A participação é aberta a todos, gratuita e já está disponível!</h2>
     <p>Este curso é aberto e avaliado por pares (peer reviewed). Para começar o curso, <strong>abra um pull request (PR)</strong> e envie seu trabalho para revisão. Aqui estão as etapas:</p>
     <ol>
         <li>Dê um fork no repositório <a href="https://github.com/huggingface/smol-course/fork">aqui</a></li>
