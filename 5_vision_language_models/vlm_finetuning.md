@@ -53,9 +53,41 @@ Despite these challenges, SFT remains a robust technique for enhancing model per
    - Employ `SFTTrainer` trainer from the TRL library, to streamline the training process.
 
 
-
-
 ## Preference Optimization
+
+Preference Optimization, particularly Direct Preference Optimization (DPO), trains a Vision Language Model (VLM) to align with human preferences. Instead of strictly following predefined instructions, the model learns to prioritize outputs that humans subjectively prefer. This approach is particularly useful for tasks involving creative judgment, nuanced reasoning, or varying acceptable answers.
+
+
+### **Overview**
+Preference Optimization addresses scenarios where subjective human preferences are central to task success. By fine-tuning on datasets that encode human preferences, DPO enhances the model's ability to generate responses that are contextually and stylistically aligned with user expectations. This method is particularly effective for tasks like creative writing, customer interactions, or multi-choice scenarios.
+
+Despite its benefits, Preference Optimization has challenges:
+- **Data Quality**: High-quality, preference-annotated datasets are required, often making data collection a bottleneck.
+- **Complexity**: Training can involve sophisticated processes such as pairwise sampling of preferences and balancing computational resources.
+
+Preference datasets must capture clear preferences between candidate outputs. For example, a dataset may pair a question with two responses—one preferred and the other less acceptable. The model learns to predict the preferred response, even if it's not entirely correct, as long as it's better aligned with human judgment.
+
+
+### **Usage**
+1. **Dataset Preparation**  
+   A preference-labeled dataset is crucial for training. Each example typically consists of a prompt (e.g., an image and question) and two candidate responses: one chosen (preferred) and one rejected. For example:
+
+   - **Question**: How many families?  
+     - **Rejected**: The image does not provide any information about families.  
+     - **Chosen**: The image shows a Union Organization table setup with 18,000 families.  
+
+   The dataset teaches the model to prioritize better-aligned responses, even if they aren’t perfect. 
+
+2. **Model Setup**  
+   Load a pre-trained VLM and integrate it with Hugging Face's TRL library, which supports DPO, and a processor for preparing text and image inputs. Configure the model for supervised learning and suitability for your hardware.
+
+3. **Training Pipeline**  
+   Training involves configuring DPO-specific parameters. Here's a summary of the process:
+
+   - **Format Dataset**: Structure each sample with prompts, images, and candidate answers.
+   - **Loss Function**: Use a preference-based loss function to optimize the model for selecting the preferred output.
+   - **Efficient Training**: Combine techniques like quantization, gradient accumulation, and LoRA adapters to optimize memory and computation.
+
 
 
 ## Resources
