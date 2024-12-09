@@ -15,7 +15,7 @@ In this module, we will cover two popular PEFT methods:
 
 ### 1️⃣ LoRA (Low-Rank Adaptation)
 
-LoRA has emerged as the most widely adopted PEFT method, offering an elegant solution to efficient model adaptation. Instead of modifying the entire model, LoRA injects trainable matrices into the model's attention layers. This approach typically reduces trainable parameters by about 90% while maintaining comparable performance to full fine-tuning. We will explore LoRA in the [LoRA (Low-Rank Adaptation)](./lora_adapters.md) section.
+LoRA has emerged as the most widely adopted PEFT method, offering an elegant solution to efficient model adaptation. Instead of modifying the entire model, **LoRA injects trainable matrices into the model's attention layers.** This approach typically reduces trainable parameters by about 90% while maintaining comparable performance to full fine-tuning. We will explore LoRA in the [LoRA (Low-Rank Adaptation)](./lora_adapters.md) section.
  
 ### 2️⃣ Prompt Tuning
 
