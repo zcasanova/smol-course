@@ -4,6 +4,8 @@
 
 Đây là một khoá học thực hành về việc huấn luyện các mô hình ngôn ngữ (LM) cho các trường hợp sử dụng cụ thể. Khoá học này là cách thuận tiện để bắt đầu với việc điều chỉnh các mô hình ngôn ngữ, bởi vì mọi thứ đều có thể chạy được trên hầu hết các máy tính cá nhân. Tại đây, chúng ta không cần quá nhiều tài nguyên GPUs hay các dịch vụ trả phí để học tập. Khoá học được xây dựng dựa trên series mô hình [SmolLM2](https://github.com/huggingface/smollm/tree/main), nhưng bạn có thể áp dụng các kỹ năng học được ở đây cho các mô hình lớn hơn hoặc các mô hình ngôn ngữ nhỏ khác.
 
+*Lưu ý: Vì khóa học được dịch từ bản gốc tiếng Anh, chúng tôi sẽ giữ lại một số thuật ngữ gốc nhằm tránh gây hiểu lầm.*
+
 <a href="http://hf.co/join/discord">
 <img src="https://img.shields.io/badge/Discord-7289DA?&logo=discord&logoColor=white"/>
 </a>
@@ -24,12 +26,12 @@ Chúng ta có thể thảo luận về quá trình học tập và phát triển
 
 ## Nội dung khoá học
 
-Khoá học này cung cấp phương pháp thực hành để làm việc với các mô hình ngôn ngữ nhỏ, từ huấn luyện ban đầu đến triển khai production.
+Khoá học này cung cấp phương pháp thực hành để làm việc với các mô hình ngôn ngữ nhỏ, từ huấn luyện ban đầu đến triển khai lên sản phẩm.
 
-| Module | Mô tả | Trạng thái | Ngày phát hành |
+| Bài | Mô tả | Trạng thái | Ngày phát hành |
 |--------|-------------|---------|--------------|
-| [Instruction Tuning](./1_instruction_tuning) | Học về tinh chỉnh có giám sát (SFT), templating chat, và thực hiện các instruction cơ bản | ✅ Sẵn sàng | 3/12/2024 |
-| [Preference Alignment](./2_preference_alignment) | Học các kỹ thuật DPO và ORPO để tinh chỉnh mô hình theo sở thích người dùng | ✅ Sẵn sàng  | 6/12/2024 |
+| [Instruction Tuning](./1_instruction_tuning) | Học về huấn luyện có giám sát (SFT), templating chat, và thực hiện các chỉ thị cơ bản | ✅ Sẵn sàng | 3/12/2024 |
+| [Preference Alignment](./2_preference_alignment) | Học các kỹ thuật DPO và ORPO để huấn luyện mô hình theo sở thích người dùng | ✅ Sẵn sàng  | 6/12/2024 |
 | [Parameter-efficient Fine-tuning](./3_parameter_efficient_finetuning) | Học về LoRA, prompt tuning và các phương pháp điều chỉnh hiệu quả | ✅ Sẵn sàng | 9/12/2024 |
 | [Evaluation](./4_evaluation) | Sử dụng benchmark tự động và tạo đánh giá theo lĩnh vực cụ thể | [🚧 Đang thực hiện](https://github.com/huggingface/smol-course/issues/42) | 13/12/2024 |
 | [Vision-language Models](./5_vision_language_models) | Điều chỉnh các mô hình đa phương thức (Multimodal models) cho các tác vụ thị giác-ngôn ngữ | [🚧 Đang thực hiện](https://github.com/huggingface/smol-course/issues/49) | 16/12/2024 |
