@@ -10,7 +10,7 @@ Chat templates là cấu trúc giữa các tương tác giữa người dùng v�
 
 ## 2️⃣ Huấn luyện có giám sát (Supervised Fine-Tuning)
 
-Huấn luyện có giám sát (SFT) là một quá trình then chốt để điều chỉnh các mô hình ngôn ngữ đã *pre-trained* cho các tác vụ cụ thể. Quá trình này bao gồm việc huấn luyện mô hình trên tập dữ liệu có gán nhãn theo tác vụ cụ thể. Để đọc hướng dẫn chi tiết về SFT, bao gồm các bước quan trọng và các phương pháp thực hành tốt nhất, hãy xem tại trang [Supervised Fine-Tuning](./supervised_fine_tuning.md).
+Huấn luyện có giám sát (SFT) là một quá trình cốt lõi để điều chỉnh các mô hình ngôn ngữ đã *pre-trained* cho các tác vụ cụ thể. Quá trình này bao gồm việc huấn luyện mô hình trên tập dữ liệu có gán nhãn theo tác vụ cụ thể. Để đọc hướng dẫn chi tiết về SFT, bao gồm các bước quan trọng và các phương pháp thực hành tốt nhất, hãy xem tại trang [Supervised Fine-Tuning](./supervised_fine_tuning.md).
 
 ## Bài tập
 

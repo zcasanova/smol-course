@@ -1,41 +1,41 @@
-# Supervised Fine-Tuning
+# Huấn luyện có giám sát (Supervised Fine-Tuning)
 
-Supervised Fine-Tuning (SFT) is a critical process for adapting pre-trained language models to specific tasks or domains. While pre-trained models have impressive general capabilities, they often need to be customized to excel at particular use cases. SFT bridges this gap by further training the model on carefully curated datasets with human-validated examples.
+Huấn luyện có giám sát (SFT) là một quá trình cốt lõi để điều chỉnh các mô hình ngôn ngữ đã được *pre-trained* cho các tác vụ hoặc lĩnh vực cụ thể. Mặc dù các mô hình đã *pre-trained* có các khả năng tổng quát ấn tượng, chúng thường cần được điều chỉnh để xuất sắc trong các trường hợp sử dụng cụ thể. SFT thu hẹp khoảng cách này bằng cách huấn luyện thêm mô hình trên các tập dữ liệu được tuyển chọn kỹ lưỡng với các mẫu đã được con người đánh giá.
 
-## Understanding Supervised Fine-Tuning
+## Tìm hiểu thêm về huấn luyện có giám sát
 
-At its core, supervised fine-tuning is about teaching a pre-trained model to perform specific tasks through examples of labeled tokens. The process involves showing the model many examples of the desired input-output behavior, allowing it to learn the patterns specific to your use case.
+Về cốt lõi, SFT là về việc dạy một mô hình đã *pre-trained* thực hiện các tác vụ cụ thể thông qua các mẫu của các *token* đã được gán nhãn. Quá trình này bao gồm việc cho mô hình học nhiều mẫu về các hành vi đầu vào-đầu ra mong muốn, cho phép nó học các mẫu cụ thể cho trường hợp sử dụng của bạn.
 
-SFT is effective because it uses the foundational knowledge acquired during pre-training while adapting the model's behavior to match your specific needs.
+SFT hiệu quả vì nó sử dụng kiến thức nền tảng thu được trong quá trình *pre-training* trong khi điều chỉnh hành vi của mô hình để phù hợp với nhu cầu cụ thể của bạn.
 
-## When to Use Supervised Fine-Tuning
+## Khi nào nên sử dụng huấn luyện có giám sát
 
-The decision to use SFT often comes down to the gap between your model's current capabilities and your specific requirements. SFT becomes particularly valuable when you need precise control over the model's outputs or when working in specialized domains.
+Quyết định sử dụng SFT thường phụ thuộc vào khoảng cách giữa khả năng hiện tại của mô hình và yêu cầu cụ thể của bạn. SFT trở nên đặc biệt có giá trị khi bạn cần kiểm soát chính xác đầu ra của mô hình hoặc khi làm việc trong các lĩnh vực chuyên biệt.
 
-For example, if you're developing a customer service application, you might want your model to consistently follow company guidelines and handle technical queries in a standardized way. Similarly, in medical or legal applications, accuracy and adherence to domain-specific terminology becomes crucial. In these cases, SFT can help align the model's responses with professional standards and domain expertise.
+Ví dụ, nếu bạn đang phát triển một ứng dụng dịch vụ khách hàng, bạn có thể muốn mô hình của mình liên tục tuân theo hướng dẫn của công ty và xử lý các truy vấn kỹ thuật theo cách chuẩn hóa. Tương tự, trong các ứng dụng y tế hoặc pháp lý, độ chính xác và tuân thủ thuật ngữ chuyên ngành trở nên cực kỳ quan trọng. Trong những trường hợp này, SFT có thể giúp điều chỉnh phản hồi của mô hình phù hợp với tiêu chuẩn chuyên môn và chuyên môn trong lĩnh vực.
 
-## The Fine-Tuning Process
+## Quy trình huấn luyện
 
-The supervised fine-tuning process involves training model weights on a task-specific dataset. 
+Quy trình huấn luyện có giám sát bao gồm việc huấn luyện trọng số mô hình trên một tập dữ liệu theo tác vụ cụ thể.
 
-First, you'll need to prepare or select a dataset that represents your target task. This dataset should include diverse examples that cover the range of scenarios your model will encounter. The quality of this data is important - each example should demonstrate the kind of output you want your model to produce. Next comes the actual fine-tuning phase, where you'll use frameworks like Hugging Face's `transformers` and `trl` to train the model on your dataset. 
+Đầu tiên, bạn cần chuẩn bị hoặc lựa chọn một tập dữ liệu đại diện cho tác vụ mục tiêu của bạn. Tập dữ liệu này nên bao gồm các mẫu đa dạng bao quát phạm vi các tình huống mà mô hình của bạn sẽ gặp phải. Chất lượng của dữ liệu này rất quan trọng - mỗi mẫu nên thể hiện loại đầu ra mà bạn muốn mô hình của mình tạo ra. Tiếp theo là giai đoạn huấn luyện thực tế, nơi bạn sẽ sử dụng các framework có sẵn như `transformers` và `trl` của Hugging Face để huấn luyện mô hình trên tập dữ liệu của bạn.
 
-Throughout the process, continuous evaluation is essential. You'll want to monitor the model's performance on a validation set to ensure it's learning the desired behaviors without losing its general capabilities. In [module 4](../4_evaluation), we'll cover how to evaluate your model.
+Trong suốt quá trình này, việc đánh giá liên tục là thiết yếu. Bạn sẽ muốn theo dõi hiệu suất của mô hình trên một tập đánh giá (validation set) để đảm bảo nó đang học các hành vi mong muốn mà không mất đi khả năng tổng quát. Trong [bài 4](./4_evaluation), chúng ta sẽ tìm hiểu cách đánh giá mô hình đã được huấn luyện.
 
-## The Role of SFT in Preference Alignment
+## Vai trò của huấn luyện có giám sát trong điều chỉnh theo sở thích
 
-SFT plays a fundamental role in aligning language models with human preferences. Techniques such as Reinforcement Learning from Human Feedback (RLHF) and Direct Preference Optimization (DPO) rely on SFT to form a base level of task understanding before further aligning the model’s responses with desired outcomes. Pre-trained models, despite their general language proficiency, may not always generate outputs that match human preferences. SFT bridges this gap by introducing domain-specific data and guidance, which improves the model’s ability to generate responses that align more closely with human expectations.
+SFT đóng vai trò nền tảng trong việc điều chỉnh các mô hình ngôn ngữ theo sở thích của con người. Các kỹ thuật như Reinforcement Learning from Human Feedback (RLHF) và Direct Preference Optimization (DPO) dựa vào SFT để hình thành mức độ hiểu biết cơ bản về tác vụ trước khi tiếp tục điều chỉnh phản hồi của mô hình với kết quả mong muốn. Các mô hình đã *pre-trained*, mặc dù có khả năng ngôn ngữ tổng quát, có thể không phải lúc nào cũng tạo ra đầu ra phù hợp với sở thích của con người. SFT thu hẹp khoảng cách này bằng cách đưa vào dữ liệu và hướng dẫn theo lĩnh vực cụ thể, cải thiện khả năng của mô hình trong việc tạo ra phản hồi phù hợp hơn với kỳ vọng của con người.
 
-## Supervised Fine-Tuning With Transformer Reinforcement Learning
+## Huấn luyện có giám sát với Transformer Reinforcement Learning
 
-A key software package for Supervised Fine-Tuning is Transformer Reinforcement Learning (TRL). TRL is a toolkit used to train transformer language models models using reinforcement learning (RL).
+Một thư viện quan trọng cho SFT đó là Transformer Reinforcement Learning (TRL). TRL là một bộ công cụ được sử dụng để huấn luyện các mô hình ngôn ngữ transformer bằng học tăng cường (RL).
 
-Built on top of the Hugging Face Transformers library, TRL allows users to directly load pretrained language models and supports most decoder and encoder-decoder architectures. The library facilitates major processes of RL used in language modelling, including supervised fine-tuning (SFT), reward modeling (RM), proximal policy optimization (PPO), and Direct Preference Optimization (DPO). We will use TRL in a number of modules throughout this repo.
+Được xây dựng trên thư viện Transformers của Hugging Face, TRL cho phép người dùng trực tiếp tải các mô hình ngôn ngữ đã được *pre-trained* và hỗ trợ hầu hết các kiến trúc decoder và encoder-decoder. Thư viện này tạo điều kiện cho các quy trình chính của RL được sử dụng trong mô hình hóa ngôn ngữ, bao gồm Supervised Fine-Tuning (SFT), Reward Modeling (RM), Proximal Policy Optimization (PPO), và Direct Preference Optimization (DPO). Chúng ta sẽ sử dụng TRL trong nhiều bài học trong khoá học này.
 
-# Next Steps
+# Các bước tiếp theo
 
-Try out the following tutorials to get hands on experience with SFT using TRL:
+Hãy thử các hướng dẫn sau để có tìm hiểu các ví dụ SFT thông qua TRL:
 
-⏭️ [Chat Templates Tutorial](./notebooks/chat_templates_example.ipynb)
+⏭️ [Hướng dẫn Chat Templates](./notebooks/chat_templates_example.ipynb)
 
-⏭️ [Supervised Fine-Tuning Tutorial](./notebooks/supervised_fine_tuning_tutorial.ipynb)
+⏭️ [Hướng dẫn Huấn luyện có giám sát](./notebooks/supervised_fine_tuning_tutorial.ipynb)
