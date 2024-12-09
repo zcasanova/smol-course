@@ -22,9 +22,9 @@ Quy trình huấn luyện có giám sát bao gồm việc huấn luyện trọng
 
 Trong suốt quá trình này, việc đánh giá liên tục là thiết yếu. Bạn sẽ muốn theo dõi hiệu suất của mô hình trên một tập đánh giá (validation set) để đảm bảo nó đang học các hành vi mong muốn mà không mất đi khả năng tổng quát. Trong [bài 4](./4_evaluation), chúng ta sẽ tìm hiểu cách đánh giá mô hình đã được huấn luyện.
 
-## Vai trò của huấn luyện có giám sát trong điều chỉnh theo sở thích
+## Vai trò của huấn luyện có giám sát trong điều chỉnh theo sự uy tiên
 
-SFT đóng vai trò nền tảng trong việc điều chỉnh các mô hình ngôn ngữ theo sở thích của con người. Các kỹ thuật như Reinforcement Learning from Human Feedback (RLHF) và Direct Preference Optimization (DPO) dựa vào SFT để hình thành mức độ hiểu biết cơ bản về tác vụ trước khi tiếp tục điều chỉnh phản hồi của mô hình với kết quả mong muốn. Các mô hình đã *pre-trained*, mặc dù có khả năng ngôn ngữ tổng quát, có thể không phải lúc nào cũng tạo ra đầu ra phù hợp với sở thích của con người. SFT thu hẹp khoảng cách này bằng cách đưa vào dữ liệu và hướng dẫn theo lĩnh vực cụ thể, cải thiện khả năng của mô hình trong việc tạo ra phản hồi phù hợp hơn với kỳ vọng của con người.
+SFT đóng vai trò nền tảng trong việc điều chỉnh các mô hình ngôn ngữ theo sự uy tiên của con người. Các kỹ thuật như Reinforcement Learning from Human Feedback (RLHF) và Direct Preference Optimization (DPO) dựa vào SFT để hình thành mức độ hiểu biết cơ bản về tác vụ trước khi tiếp tục điều chỉnh phản hồi của mô hình với kết quả mong muốn. Các mô hình đã *pre-trained*, mặc dù có khả năng ngôn ngữ tổng quát, có thể không phải lúc nào cũng tạo ra đầu ra phù hợp với sở thích của con người. SFT thu hẹp khoảng cách này bằng cách đưa vào dữ liệu và hướng dẫn theo lĩnh vực cụ thể, cải thiện khả năng của mô hình trong việc tạo ra phản hồi phù hợp hơn với kỳ vọng của con người.
 
 ## Huấn luyện có giám sát với Transformer Reinforcement Learning
 
@@ -36,6 +36,6 @@ Một thư viện quan trọng cho SFT đó là Transformer Reinforcement Learni
 
 Hãy thử các hướng dẫn sau để có tìm hiểu các ví dụ SFT thông qua TRL:
 
-⏭️ [Hướng dẫn Chat Templates](./notebooks/chat_templates_example.ipynb)
+⏭️ [Hướng dẫn Địng dạng Chat](./notebooks/chat_templates_example.ipynb)
 
 ⏭️ [Hướng dẫn Huấn luyện có giám sát](./notebooks/supervised_fine_tuning_tutorial.ipynb)
