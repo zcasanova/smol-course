@@ -19,7 +19,7 @@ LoRA has emerged as the most widely adopted PEFT method, offering an elegant sol
  
 ### 2️⃣ Prompt Tuning
 
-Prompt tuning offers an even lighter approach by adding trainable tokens to the input rather than modifying model weights. Prompt tuning is less popular than LoRA, but can be a useful technique for quickly adapting a model to new tasks or domains. We will explore prompt tuning in the [Prompt Tuning](./prompt_tuning.md) section.
+Prompt tuning offers an **even lighter** approach by **adding trainable tokens to the input** rather than modifying model weights. Prompt tuning is less popular than LoRA, but can be a useful technique for quickly adapting a model to new tasks or domains. We will explore prompt tuning in the [Prompt Tuning](./prompt_tuning.md) section.
 
 ## Exercise Notebooks
 
