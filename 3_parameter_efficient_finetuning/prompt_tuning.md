@@ -39,7 +39,7 @@ peft_config = PromptTuningConfig(
 model = get_peft_model(model, peft_config)
 ```
 
-## Comparison with Other Methods
+## Comparison to Other Methods
 
 When compared to other PEFT approaches, prompt tuning stands out for its efficiency. While LoRA offers low parameter counts and memory usage but requires loading adapters for task switching, prompt tuning achieves even lower resource usage and enables immediate task switching. Full fine-tuning, in contrast, demands significant resources and requires separate model copies for different tasks.
 
