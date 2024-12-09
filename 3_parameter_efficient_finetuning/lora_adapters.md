@@ -21,6 +21,8 @@ peft_model_id = "<peft_adapter_id>"
 model = PeftModel.from_pretrained(base_model, peft_model_id)
 ```
 
+![lora_load_adapter](./images/lora_adapter.png)
+
 ## Merging LoRA Adapters
 
 After training with LoRA, you might want to merge the adapter weights back into the base model for easier deployment. This creates a single model with the combined weights, eliminating the need to load adapters separately during inference.
