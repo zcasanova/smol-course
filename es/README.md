@@ -1,6 +1,6 @@
 ![smolcourse image](./banner.png)
 
-# Un Curso Smol (Pequeño)
+# Un Pequeño (Smol) Curso
 
 Este curso práctico está enfocado en alinear modelos de lenguaje para casos de uso específicos. Es una forma accesible de empezar a trabajar con modelos de lenguaje, ya que puede ejecutarse en la mayoría de las máquinas locales con requisitos mínimos de GPU y sin necesidad de servicios pagos. El curso se basa en la serie de modelos [SmolLM2](https://github.com/huggingface/smollm/tree/main), pero las habilidades que adquieras aquí son transferibles a modelos más grandes o otros modelos pequeños de lenguaje.
 
