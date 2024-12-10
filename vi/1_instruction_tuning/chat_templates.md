@@ -4,9 +4,9 @@
 
 ## Mô hình gốc (Base Models) và Mô hình chỉ thị (Instruct Models)
 
-Mô hình gốc được huấn luyện trên dữ liệu văn bản thô để dự đoán *token* tiếp theo, trong khi Mô hình chỉ thị được huấn luyện đặc biệt để tuân theo chỉ thị và tham gia vào các cuộc hội thoại. Ví dụ, `SmolLM2-135M` là một mô hình gốc, trong khi `SmolLM2-135M-Instruct` là phiên bản đã được điều chỉnh theo các chỉ thị của người dùng.
+Mô hình gốc được huấn luyện trên dữ liệu văn bản thô để dự đoán *token* tiếp theo, trong khi Mô hình chỉ thị được tiếp tục tinh chỉnh đặc biệt để tuân theo chỉ thị và tham gia vào hội thoại. Ví dụ, `SmolLM2-135M` là một mô hình gốc, trong khi `SmolLM2-135M-Instruct` là phiên bản đã được điều chỉnh.
 
-Để làm cho Mô hình gốc hoạt động như một Mô hình chỉ thị, chúng ta cần *định dạng prompt* của mình theo cách nhất quán mà mô hình có thể hiểu được. Đây là lúc *định dạng chat* phát huy tác dụng. **ChatML** là một định dạng template như vậy, cấu trúc các cuộc hội thoại với các chỉ báo vai trò rõ ràng (system, user, assistant).
+Để làm cho Mô hình gốc hoạt động như một Mô hình chỉ thị, chúng ta cần *định dạng prompt* của mình theo cách nhất quán mà mô hình có thể hiểu được. Đây là lúc *định dạng chat* phát huy tác dụng. **ChatML** là một định dạng template như vậy, với cấu trúc các cuộc hội thoại có chỉ định vai trò rõ ràng (system, user, assistant).
 
 Điều quan trọng cần lưu ý là một Mô hình gốc có thể được huấn luyện với các *định dạng chat* khác nhau, vì vậy khi chúng ta sử dụng một Mô hình chỉ thị, chúng ta cần đảm bảo đang sử dụng đúng *định dạng chat*.
 
@@ -38,7 +38,7 @@ Hãy cùng nhau phân tích ví dụ trên để hiểu hơn về *định dạn
 
 ## Mệnh lệnh hệ thống (System Prompt)
 
-Mệnh lệnh hệ thống thiết lập nền tảng cho cách mô hình nên hoạt động. Chúng đóng vai trò như các hướng dẫn liên tục ảnh hưởng đến tất cả các tương tác tiếp theo. Ví dụ:
+Mệnh lệnh hệ thống thiết lập nền tảng cho cách mô hình nên hoạt động. Chúng đóng vai trò như các hướng dẫn ảnh hưởng liên tục đến tất cả các tương tác tiếp theo. Ví dụ:
 
 ```python
 system_message = {
@@ -92,7 +92,7 @@ template = """
 """.lstrip()
 ```
 
-## Cuộc hội thoại nhiều lượt (multi-turn conversations)
+## Hỗ trợ hội thoại đa lượt (multi-turn conversations)
 
 Với *định dạng chat*, mô hình có thể xử lý các cuộc hội thoại phức tạp nhiều lượt trong khi vẫn duy trì ngữ cảnh:
 

@@ -1,6 +1,6 @@
 # Tinh chỉnh có giám sát (Supervised Fine-Tuning)
 
-Huấn luyện có giám sát (SFT) là một quá trình cốt lõi để điều chỉnh các mô hình ngôn ngữ đã được *pre-trained* cho các tác vụ hoặc lĩnh vực cụ thể. Mặc dù các mô hình đã *pre-trained* có các khả năng tổng quát ấn tượng, chúng thường cần được điều chỉnh để xuất sắc trong các trường hợp sử dụng cụ thể. SFT thu hẹp khoảng cách này bằng cách huấn luyện thêm mô hình trên các tập dữ liệu được tuyển chọn kỹ lưỡng với các mẫu đã được con người đánh giá.
+Tinh chỉnh có giám sát (SFT) là một quá trình cốt lõi để điều chỉnh *pre-trained models* cho các tác vụ hoặc lĩnh vực cụ thể. Mặc dù các mô hình đã *pre-trained* có các khả năng tổng quát ấn tượng  ,chúng thường cần được tùy chỉnh để đạt hiệu suất cao trong các trường hợp sử dụng cụ thể. SFT thu hẹp khoảng cách này bằng cách huấn luyện thêm mô hình trên các tập dữ liệu được tuyển chọn kỹ lưỡng cùng với các ví dụ đã được con người đánh giá.
 
 ## Tìm hiểu thêm về huấn luyện có giám sát
 
