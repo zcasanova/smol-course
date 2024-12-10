@@ -24,7 +24,7 @@ Trong suốt quá trình này, việc đánh giá liên tục là thiết yếu.
 
 ## Vai trò của huấn luyện có giám sát trong điều chỉnh theo sự uy tiên
 
-SFT đóng vai trò nền tảng trong việc điều chỉnh các mô hình ngôn ngữ theo sự uy tiên của con người. Các kỹ thuật như Reinforcement Learning from Human Feedback (RLHF) và Direct Preference Optimization (DPO) dựa vào SFT để hình thành mức độ hiểu biết cơ bản về tác vụ trước khi tiếp tục điều chỉnh phản hồi của mô hình với kết quả mong muốn. Các mô hình đã *pre-trained*, mặc dù có khả năng ngôn ngữ tổng quát, có thể không phải lúc nào cũng tạo ra đầu ra phù hợp với sở thích của con người. SFT thu hẹp khoảng cách này bằng cách đưa vào dữ liệu và hướng dẫn theo lĩnh vực cụ thể, cải thiện khả năng của mô hình trong việc tạo ra phản hồi phù hợp hơn với kỳ vọng của con người.
+SFT đóng vai trò nền tảng trong việc điều chỉnh các mô hình ngôn ngữ theo ưu tiên của con người. Các kỹ thuật như Học tăng cường từ phản hồi của con người (Reinforcement Learning from Human Feedback - RLHF) và Tối ưu hóa sở thích trực tiếp (Direct Preference Optimization - DPO) dựa vào SFT để xây dựng mức độ hiểu biết cơ bản về tác vụ trước khi tiếp tục điều chỉnh phản hồi của mô hình sao cho phù hợp với kết quả mong muốn. Các mô hình đã *pre-trained*, mặc dù có khả năng ngôn ngữ tổng quát, có thể không phải lúc nào cũng tạo ra đầu ra phù hợp ưu tiên của con người. SFT thu hẹp khoảng cách này bằng cách đưa vào dữ liệu và hướng dẫn theo lĩnh vực cụ thể, cải thiện khả năng của mô hình trong việc tạo ra phản hồi phù hợp hơn với kỳ vọng của con người.
 
 ## Huấn luyện có giám sát với Transformer Reinforcement Learning
 
