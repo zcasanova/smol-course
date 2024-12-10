@@ -1,4 +1,4 @@
-# Huấn luyện theo chỉ thị (Instruction Tuning)
+# Tinh chỉnh theo chỉ thị (Instruction Tuning)
 
 Trong chương này chúng ta sẽ học về quá trình tinh chỉnh mô hình ngôn ngữ theo chỉ thị. Tinh chỉnh theo chỉ thị là quá trình điều chỉnh *pre-trained models* cho các tác vụ cụ thể bằng cách tiếp tục huấn luyện chúng trên các tập dữ liệu đặc thù cho tác vụ. Quá trình này giúp các mô hình cải thiện hiệu suất trên những tác vụ đó.
 
