@@ -1,62 +1,66 @@
-# Odds Ratio Preference Optimization (ORPO)
+# Tối Ưu Hóa Ưu Tiên Theo Tỷ Lệ Odds (Odds Ratio Preference Optimization - ORPO)
 
-ORPO (Odds Ratio Preference Optimization) is a novel fine-tuning technique that combines fine-tuning and preference alignment into a single unified process. This combined approach offers advantages in efficiency and performance compared to traditional methods like RLHF or DPO.
+ORPO là một kỹ thuật tinh chỉnh mới kết hợp cả quá trình *tinh chỉnh theo chỉ thị* và *tinh chỉnh ưu tiên* thành một quy trình thống nhất. Cách tiếp cận kết hợp này mang lại những lợi thế về hiệu quả và hiệu suất so với các phương pháp truyền thống như RLHF hoặc DPO.
 
-## Understanding ORPO
+## Tìm Hiểu Về ORPO
 
-Alignment with methods like DPO typically involve two separate steps: supervised fine-tuning to adapt the model to a domain and format, followed by preference alignment to align with human preferences. While SFT effectively adapts models to target domains, it can inadvertently increase the probability of generating both desirable and undesirable responses. ORPO addresses this limitation by integrating both steps into a single process, as illustrated in the comparison below:
+Phương pháp tinh chỉnh như DPO thường liên quan đến hai bước riêng biệt:
+1) học có giám sát để thích ứng mô hình với một lĩnh vực và định dạng
+2) sau đó là tinh chỉnh ưu tiên để phù hợp với ý muốn của con người
 
-![Alignment Techniques Comparison](https://argilla.io/images/blog/mantisnlp-rlhf/part-8-alignments.png)
-*Comparison of different model alignment techniques*
+Trong khi SFT hiệu quả trong việc thích ứng mô hình với các lĩnh vực mục tiêu, nó có thể vô tình làm tăng xác suất tạo ra cả phản hồi mong muốn và không mong muốn. ORPO giải quyết hạn chế này bằng cách tích hợp cả hai bước vào một quy trình duy nhất, như minh họa trong hình so sánh dưới đây:
 
-## How ORPO Works
+![So sánh các kỹ thuật tinh chỉnh mô hình khác nhau](https://argilla.io/images/blog/mantisnlp-rlhf/part-8-alignments.png)
+*So sánh các kỹ thuật tinh chỉnh mô hình khác nhau*
 
-The training process leverages a preference dataset similar to what we used for DPO, where each training example contains an input prompt along with two responses: one that is preferred, and another that is rejected. Unlike other alignment methods that require separate stages and reference models, ORPO integrates preference alignment directly into the supervised fine-tuning process. This monolithic approach makes it reference model-free, computationally more efficient, and memory efficient with fewer FLOPs.
+## ORPO Hoạt Động Như Thế Nào
 
-ORPO creates a new objective by combining two main components:
+Quy trình huấn luyện sử dụng một tập dữ liệu ưu tiên tương tự như chúng ta đã sử dụng cho DPO, trong đó mỗi mẫu huấn luyện chứa một chỉ thị đầu vào cùng với hai phản hồi: một được ưu tiên và một bị loại bỏ. Khác với các phương pháp tinh chỉnh khác yêu cầu các giai đoạn riêng biệt và mô hình tham chiếu, ORPO tích hợp trực tiếp tinh chỉnh ưu tiên vào quá trình học có giám sát. Cách tiếp cận thống nhất này không cần mô hình tham chiếu, hiệu quả hơn về mặt tính toán và bộ nhớ với ít FLOPs hơn.
 
-1. **SFT Loss**: The standard negative log-likelihood loss used in language modeling, which maximizes the probability of generating reference tokens. This helps maintain the model's general language capabilities.
+ORPO tạo ra một mục tiêu mới bằng cách kết hợp hai thành phần chính:
 
-2. **Odds Ratio Loss**: A novel component that penalizes undesirable responses while rewarding preferred ones. This loss function uses odds ratios to effectively contrast between favored and disfavored responses at the token level.
+1. **SFT Loss**: Hàm mất mát *negative log-likelihood* tiêu chuẩn được sử dụng trong việc mô hình hóa ngôn ngữ, tối đa hóa xác suất tạo ra các *token tham chiếu*. Điều này giúp duy trì khả năng ngôn ngữ tổng quát của mô hình.
 
-Together, these components guide the model to adapt to desired generations for the specific domain while actively discouraging generations from the set of rejected responses. The odds ratio mechanism provides a natural way to measure and optimize the model's preference between chosen and rejected outputs. If you want to deep dive into the math, you can read the [ORPO paper](https://arxiv.org/abs/2402.01714). If you want to learn about ORPO from the implementation perspective, you should check out how loss for ORPO is calculated in the [TRL library](https://github.com/huggingface/trl/blob/b02189aaa538f3a95f6abb0ab46c0a971bfde57e/trl/trainer/orpo_trainer.py#L660).
+2. **Odds Ratio Loss**:  Một hàm mất mát mới giúp phạt các phản hồi không mong muốn trong khi thưởng cho các phản hồi được ưu tiên. Hàm mất mát này sử dụng tỷ lệ odds để so sánh hiệu quả giữa các phản hồi được ưa thích và không ưa thích ở cấp độ *token*.
 
-## Performance and Results
+Cùng nhau, các thành phần này hướng dẫn mô hình thích ứng với các phản hồi mong muốn cho lĩnh vực cụ thể trong khi tích cực ngăn chặn các phản hồi từ tập các phản hồi bị từ chối. Cơ chế tỷ lệ odds cung cấp một cách tự nhiên để đo lường và tối ưu hóa ưu tiên của mô hình giữa các đầu ra đã chọn và bị từ chối. Nếu bạn muốn tìm hiểu sâu về phần toán học, bạn có thể đọc [bài báo ORPO](https://arxiv.org/abs/2402.01714). Nếu bạn muốn tìm hiểu về ORPO từ góc độ triển khai, bạn nên xem cách tính toán hàm mất mát cho ORPO trong [thư viện TRL](https://github.com/huggingface/trl/blob/b02189aaa538f3a95f6abb0ab46c0a971bfde57e/trl/trainer/orpo_trainer.py#L660).
 
-ORPO has demonstrated impressive results across various benchmarks. On MT-Bench, it achieves competitive scores across different categories:
+## Hiệu Suất và Kết Quả
 
-![MT-Bench Results](https://argilla.io/images/blog/mantisnlp-rlhf/part-8-mtbench.png)
-*MT-Bench results by category for Mistral-ORPO models*
+ORPO đã cho thấy các kết quả ấn tượng trên nhiều bài kiểm tra. Trên `MT-Bench`, phương pháp này giúp mô hình sau tinh chỉnh đạt điểm số cạnh tranh trên các danh mục khác nhau:
 
-When compared to other alignment methods, ORPO shows superior performance on AlpacaEval 2.0:
+![Kết quả MT-Bench](https://argilla.io/images/blog/mantisnlp-rlhf/part-8-mtbench.png)
+*Kết quả MT-Bench theo danh mục cho các mô hình Mistral-ORPO*
 
-![AlpacaEval Results](https://argilla.io/images/blog/mantisnlp-rlhf/part-8-winrate.png)
-*AlpacaEval 2.0 scores across different alignment methods*
+So với các phương pháp tinh chỉnh khác, ORPO thể hiện hiệu suất vượt trội trên AlpacaEval 2.0:
 
-Compared to SFT+DPO, ORPO reduces computational requirements by eliminating the need for a reference model and halving the number of forward passes per batch. Also, the training process is more stable across different model sizes and datasets, requiring fewer hyperparameters to tune. Performance-wise, ORPO matches larger models while showing better alignment with human preferences.
+![Kết quả AlpacaEval](https://argilla.io/images/blog/mantisnlp-rlhf/part-8-winrate.png)
+*Điểm số AlpacaEval 2.0 trên các phương pháp tinh chỉnh khác nhau*
 
-## Implementation 
+So với việc kết hợp cả SFT và DPO, ORPO giảm yêu cầu tính toán bằng cách loại bỏ nhu cầu về mô hình tham chiếu và giảm một nửa số lần chuyển tiếp (forward pass) cho mỗi batch. Ngoài ra, quy trình huấn luyện ổn định hơn trên các kích thước mô hình và tập dữ liệu khác nhau, yêu cầu ít siêu tham số cần tinh chỉnh hơn. Về mặt hiệu suất, ORPO ngang bằng với các mô hình lớn hơn trong khi cho thấy sự tinh chỉnh tốt hơn với ý muốn của con người.
 
-Successful implementation of ORPO depends heavily on high-quality preference data. The training data should follow clear annotation guidelines and provide a balanced representation of preferred and rejected responses across diverse scenarios. 
+## Triển Khai 
 
-### Implementation with TRL
+Triển khai thành công ORPO phụ thuộc nhiều vào **dữ liệu ưu tiên chất lượng cao**. Dữ liệu huấn luyện nên tuân theo các hướng dẫn gán nhãn rõ ràng và cung cấp sự đại diện cân bằng của các phản hồi được ưu tiên và bị từ chối trong các tình huống đa dạng. 
 
-ORPO can be implemented using the Transformers Reinforcement Learning (TRL) library. Here's a basic example:
+### Triển Khai với TRL
+
+ORPO có thể được triển khai sử dụng thư viện TRL. Đây là một ví dụ cơ bản:
 
 ```python
 from trl import ORPOConfig, ORPOTrainer
 
-# Configure ORPO training
+# Cấu hình tinh chỉnh ORPO
 orpo_config = ORPOConfig(
     learning_rate=1e-5,
     per_device_train_batch_size=4,
     gradient_accumulation_steps=4,
     max_steps=1000,
-    orpo_alpha=1.0,  # Controls strength of preference optimization
-    orpo_beta=0.1,   # Temperature parameter for odds ratio
+    orpo_alpha=1.0,  # Kiểm soát độ mạnh của tối ưu hóa ưu tiên
+    orpo_beta=0.1,   # Tham số cho sự ngẫu nhiên (temperature) trong tính tỷ lệ odds
 )
 
-# Initialize trainer
+# Khởi tạo trainer
 trainer = ORPOTrainer(
     model=model,
     args=orpo_config,
@@ -64,21 +68,22 @@ trainer = ORPOTrainer(
     tokenizer=tokenizer,
 )
 
-# Start training
+# Huấn luyện mô hình
 trainer.train()
 ```
 
-Key parameters to consider:
-- `orpo_alpha`: Controls the strength of preference optimization
-- `orpo_beta`: Temperature parameter for the odds ratio calculation
-- `learning_rate`: Should be relatively small to prevent catastrophic forgetting
-- `gradient_accumulation_steps`: Helps with training stability
+Các tham số chính cần xem xét:
 
-## Next Steps
+- `orpo_alpha`: Kiểm soát độ mạnh của thuật toán tối ưu hóa ưu tiên
+- `orpo_beta`: Tham số cho sự ngẫu nhiên (temperature) trong phép tính tỷ lệ odds
+- `learning_rate`: Nên tương đối nhỏ để tránh catastrophic forgetting
+- `gradient_accumulation_steps`: Giúp ổn định quá trình huấn luyện
 
-⏩ Try the [ORPO Tutorial](./notebooks/orpo_tutorial.ipynb) to implement this unified approach to preference alignment.
+## Các Bước Tiếp Theo
+
+⏩ Bạn có thể làm theo hướng dẫn trong [Hướng dẫn ORPO](./notebooks/orpo_tutorial.ipynb) để triển khai cách tinh chỉnh ưu tiên này.
 
 ## Resources
-- [ORPO Paper](https://arxiv.org/abs/2402.01714)
-- [TRL Documentation](https://huggingface.co/docs/trl/index)
-- [Argilla RLHF Guide](https://argilla.io/blog/mantisnlp-rlhf-part-8/) 
+- [Bài báo nghiên cứu về ORPO](https://arxiv.org/abs/2402.01714)
+- [Tài liệu về thư viện TRL](https://huggingface.co/docs/trl/index)
+- [Hướng dẫn của Argilla](https://argilla.io/blog/mantisnlp-rlhf-part-8/) 

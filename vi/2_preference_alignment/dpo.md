@@ -62,7 +62,7 @@ Chúng ta sẽ tìm hiểu thêm chi tiết về cách sử dụng các lớp `D
 
 ## Phương Pháp Tốt Nhất
 
-Chất lượng dữ liệu là yếu tố quan trọng cho việc triển khai DPO thành công. Tập dữ liệu ưu tiên nên bao gồm các ví dụ đa dạng bao quát các khía cạnh khác nhau của hành vi mong muốn. Hướng dẫn gán nhãn rõ ràng đảm bảo việc gán nhãn nhất quán cho các phản hồi được ưu tiên và không được ưu tiên. Bạn có thể cải thiện hiệu suất mô hình bằng cách nâng cao chất lượng tập dữ liệu ưu tiên. Ví dụ, bằng cách lọc các tập dữ liệu lớn hơn để chỉ bao gồm các ví dụ chất lượng cao hoặc các ví dụ liên quan đến trường hợp sử dụng của bạn.
+**Chất lượng dữ liệu là yếu tố quan trọng** cho việc triển khai DPO thành công. Tập dữ liệu ưu tiên nên bao gồm các ví dụ đa dạng bao quát các khía cạnh khác nhau của hành vi mong muốn. Hướng dẫn gán nhãn rõ ràng đảm bảo việc gán nhãn nhất quán cho các phản hồi được ưu tiên và không được ưu tiên. Bạn có thể cải thiện hiệu suất mô hình bằng cách nâng cao chất lượng tập dữ liệu ưu tiên. Ví dụ, bằng cách lọc các tập dữ liệu lớn hơn để chỉ bao gồm các ví dụ chất lượng cao hoặc các ví dụ liên quan đến trường hợp sử dụng của bạn.
 
 Trong quá trình huấn luyện, cần theo dõi kỹ sự hội tụ của hàm mất mát và đánh giá hiệu suất trên dữ liệu kiểm tra (held-out set). Tham số `beta` có thể cần điều chỉnh để cân bằng giữa việc học ưu tiên với việc duy trì các khả năng tổng quát của mô hình. Đánh giá thường xuyên trên các chỉ thị đa dạng giúp đảm bảo mô hình đang học các ưu tiên mong muốn mà không bị tình trạng quá khớp (overfitting).
 
