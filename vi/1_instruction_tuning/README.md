@@ -4,7 +4,7 @@ Trong chương này chúng ta sẽ học về quá trình tinh chỉnh mô hình
 
 Chúng ta sẽ cùng khám phá hai chủ đề chính: 1) Chat Templates và 2) Tinh chỉnh có giám sát (Supervised Fine-Tuning).
 
-## 1️⃣ Chat Templates
+## 1️⃣ Định dạng Chat (Chat Templates)
 
 Chat templates là cấu trúc giữa các tương tác giữa người dùng và mô hình ngôn ngữ, đảm bảo các phản hồi nhất quán và phù hợp với từng ngữ cảnh. Chúng bao gồm các thành phần như `system prompts` và các `message` theo vai trò (người dùng - `user` hoặc trợ lý - `assistant`). Để biết thêm thông tin chi tiết, hãy tham khảo phần [Chat Templates](./chat_templates.md).
 
