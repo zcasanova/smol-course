@@ -1,49 +1,52 @@
-# Direct Preference Optimization (DPO)
+# Tối Ưu Hóa Ưu Tiên Trực Tiếp (Direct Preference Optimization - DPO)
 
-Direct Preference Optimization (DPO) offers a simplified approach to aligning language models with human preferences. Unlike traditional RLHF methods that require separate reward models and complex reinforcement learning, DPO directly optimizes the model using preference data.
+DPO cung cấp một cách tiếp cận đơn giản để tinh chỉnh mô hình ngôn ngữ theo ý muốn của con người. Khác với phương pháp RLHF truyền thống yêu cầu các mô hình thưởng phạt riêng biệt và học tăng cường phức tạp, DPO tối ưu hóa trực tiếp mô hình bằng dữ liệu ưu tiên (preference dataset).
 
-## Understanding DPO
+## Tìm Hiểu Về DPO
 
-DPO recasts preference alignment as a classification problem on human preference data. Traditional RLHF approaches require training a separate reward model and using complex reinforcement learning algorithms like PPO to align model outputs. DPO simplifies this process by defining a loss function that directly optimizes the model's policy based on preferred vs non-preferred outputs.
+DPO chuyển đổi bài toán tinh chỉnh ưu tiên thành bài toán phân loại trên dữ liệu ưu tiên của con người. Phương pháp RLHF truyền thống yêu cầu huấn luyện một mô hình thưởng phạt riêng biệt và sử dụng các thuật toán học tăng cường phức tạp như PPO để căn chỉnh đầu ra của mô hình. DPO đơn giản hóa quy trình này bằng cách định nghĩa một hàm mất mát (loss) trực tiếp tối ưu hóa chiến lược học (policy) của mô hình dựa trên các đầu ra được ưu tiên và không được ưu tiên.
 
-This approach has proven highly effective in practice, being used to train models like Llama. By eliminating the need for a separate reward model and reinforcement learning stage, DPO makes preference alignment more accessible and stable.
+Phương pháp này đã chứng minh hiệu quả cao trong thực tế, được sử dụng để huấn luyện các mô hình như Llama. Bằng cách loại bỏ nhu cầu về mô hình thưởng phạt riêng biệt và giai đoạn học tăng cường, DPO giúp việc tinh chỉnh ưu tiên trở nên dễ tiếp cận và ổn định hơn.
 
-## How DPO Works
+## DPO Hoạt Động Như Thế Nào
 
-The DPO process requires supervised fine-tuning (SFT) to adapt the model to the target domain. This creates a foundation for preference learning by training on standard instruction-following datasets. The model learns basic task completion while maintaining its general capabilities.
+Quy trình DPO yêu cầu quá trình học có giám sát (SFT) để thích ứng mô hình với lĩnh vực mục tiêu. Điều này tạo nền tảng cho việc học ưu tiên bằng cách huấn luyện trên các tập dữ liệu làm theo chỉ thị tiêu chuẩn. Mô hình học cách hoàn thành tác vụ cơ bản trong khi duy trì các khả năng tổng quát.
 
-Next comes preference learning, where the model is trained on pairs of outputs - one preferred and one non-preferred. The preference pairs help the model understand which responses better align with human values and expectations.
+Tiếp theo là quá trình học ưu tiên, nơi mô hình được huấn luyện trên các cặp đầu ra - một được ưu tiên và một không được ưu tiên. Các cặp ưu tiên giúp mô hình hiểu phản hồi nào phù hợp hơn với giá trị và kỳ vọng của con người.
 
-The core innovation of DPO lies in its direct optimization approach. Rather than training a separate reward model, DPO uses a binary cross-entropy loss to directly update the model weights based on preference data. This streamlined process makes training more stable and efficient while achieving comparable or better results than traditional RLHF.
+Đổi mới cốt lõi của DPO nằm ở cách tiếp cận tối ưu hóa trực tiếp. Thay vì huấn luyện một mô hình thưởng phạt riêng biệt, DPO sử dụng hàm mất mát `binary cross-entropy` để trực tiếp cập nhật trọng số mô hình dựa trên dữ liệu ưu tiên. Quy trình đơn giản này giúp việc huấn luyện ổn định và hiệu quả hơn trong khi đạt được kết quả tương đương hoặc tốt hơn so với RLHF truyền thống.
 
-## DPO datasets
+## Bộ Dữ Liệu DPO
 
-Datasets for DPO are typically created by annotating pairs of responses as preferred or non-preferred. This can be done manually or using automated filtering techniques. Below is an example structure of single turn preference dataset for DPO:
+Bộ dữ liệu cho DPO thường được tạo bằng cách gán nhãn các cặp phản hồi là được ưu tiên hoặc không được ưu tiên. Việc này có thể được thực hiện thủ công hoặc sử dụng các kỹ thuật lọc tự động. Dưới đây là cấu trúc mẫu của tập dữ liệu preference một lượt cho DPO:
 
+```
 | Prompt | Chosen | Rejected |
 |--------|--------|----------|
 | ...    | ...    | ...      |
 | ...    | ...    | ...      |
 | ...    | ...    | ...      |
+```
 
-The `Prompt` column contains the prompt used to generate the `Chosen` and `Rejected` responses. The `Chosen` and `Rejected` columns contain the responses that are preferred and non-preferred respectively. There are variations on this structure, for example, including a system prompt column or `Input` column containing reference material. The values of `chosen` and `rejected` can be be represented as strings for single turn conversations or as conversation lists. 
+Cột `Prompt` chứa chỉ thị dùng để tạo ra các phản hồi. Cột `Chosen` và `Rejected` chứa các phản hồi được ưu tiên và không được ưu tiên. Có nhiều biến thể của cấu trúc này, ví dụ, bao gồm cột `System Prompt` (chỉ thị hệ thống) hoặc cột `Input` chứa tài liệu tham khảo. Giá trị của `Chosen` và `Rejected` có thể được biểu diễn dưới dạng chuỗi cho hội thoại một lượt hoặc dưới dạng danh sách hội thoại.
 
-You can find a collection of DPO datasets on Hugging Face [here](https://huggingface.co/collections/argilla/preference-datasets-for-dpo-656f0ce6a00ad2dc33069478).
+Bạn có thể tìm thấy bộ sưu tập các tập dữ liệu DPO trên Hugging Face [tại đây](https://huggingface.co/collections/argilla/preference-datasets-for-dpo-656f0ce6a00ad2dc33069478).
 
-## Implementation with TRL
+## Triển Khai Với TRL
 
-The Transformers Reinforcement Learning (TRL) library makes implementing DPO straightforward. The `DPOConfig` and `DPOTrainer` classes follow the same `transformers` style API.
-Here's a basic example of setting up DPO training:
+Thư viện Transformers Reinforcement Learning (TRL) giúp việc triển khai DPO trở nên đơn giản. Các lớp `DPOConfig` và `DPOTrainer` tuân theo API của thư viện `transformers`.
+
+Đây là ví dụ cơ bản về cách thiết lập tinh chỉnh DPO:
 
 ```python
 from trl import DPOConfig, DPOTrainer
 
-# Define arguments
+# Định nghĩa các tham số
 training_args = DPOConfig(
     ...
 )
 
-# Initialize trainer
+# Khởi tạo trainer
 trainer = DPOTrainer(
     model,
     train_dataset=dataset,
@@ -51,22 +54,22 @@ trainer = DPOTrainer(
     ...
 )
 
-# Train model
+# Huấn luyện mô hình
 trainer.train()
 ```
 
-We will cover more details on how to use the `DPOConfig` and `DPOTrainer` classes in the [DPO Tutorial](./notebooks/dpo_finetuning_example.ipynb).
+Chúng ta sẽ tìm hiểu thêm chi tiết về cách sử dụng các lớp `DPOConfig` và `DPOTrainer` trong [Hướng dẫn DPO](./notebooks/dpo_finetuning_example.ipynb).
 
-## Best Practices
+## Phương Pháp Tốt Nhất
 
-Data quality is crucial for successful DPO implementation. The preference dataset should include diverse examples covering different aspects of desired behavior. Clear annotation guidelines ensure consistent labeling of preferred and non-preferred responses. You can improve model performance by improving the quality of your preference dataset. For example, by filtering down larger datasets to include only high quality examples, or examples that relate to your use case.
+Chất lượng dữ liệu là yếu tố quan trọng cho việc triển khai DPO thành công. Tập dữ liệu ưu tiên nên bao gồm các ví dụ đa dạng bao quát các khía cạnh khác nhau của hành vi mong muốn. Hướng dẫn gán nhãn rõ ràng đảm bảo việc gán nhãn nhất quán cho các phản hồi được ưu tiên và không được ưu tiên. Bạn có thể cải thiện hiệu suất mô hình bằng cách nâng cao chất lượng tập dữ liệu ưu tiên. Ví dụ, bằng cách lọc các tập dữ liệu lớn hơn để chỉ bao gồm các ví dụ chất lượng cao hoặc các ví dụ liên quan đến trường hợp sử dụng của bạn.
 
-During training, carefully monitor the loss convergence and validate performance on held-out data. The beta parameter may need adjustment to balance preference learning with maintaining the model's general capabilities. Regular evaluation on diverse prompts helps ensure the model is learning the intended preferences without overfitting.
+Trong quá trình huấn luyện, cần theo dõi kỹ sự hội tụ của hàm mất mát và đánh giá hiệu suất trên dữ liệu kiểm tra (held-out set). Tham số `beta` có thể cần điều chỉnh để cân bằng giữa việc học ưu tiên với việc duy trì các khả năng tổng quát của mô hình. Đánh giá thường xuyên trên các chỉ thị đa dạng giúp đảm bảo mô hình đang học các ưu tiên mong muốn mà không bị tình trạng quá khớp (overfitting).
 
-Compare the model's outputs with the reference model to verify improvement in preference alignment. Testing on a variety of prompts, including edge cases, helps ensure robust preference learning across different scenarios.
+So sánh đầu ra của mô hình với mô hình tham chiếu để xác minh sự cải thiện trong tinh chỉnh ưu tiên. Kiểm tra trên nhiều chỉ thị khác nhau, bao gồm cả các trường hợp ngoại lệ (edge cases), giúp đảm bảo việc học ưu tiên mạnh mẽ hơn trong các tình huống khác nhau.
 
-## Next Steps
+## Các Bước Tiếp Theo
 
-⏩ To get hands-on experience with DPO, try the [DPO Tutorial](./notebooks/dpo_finetuning_example.ipynb). This practical guide will walk you through implementing preference alignment with your own model, from data preparation to training and evaluation. 
+⏩ Để có thể thực hành thực tế với DPO, hãy thử [Hướng dẫn DPO](./notebooks/dpo_finetuning_example.ipynb). Hướng dẫn thực hành này sẽ chỉ dẫn bạn cách triển khai tinh chỉnh ưu tiên với mô hình của riêng bạn, từ chuẩn bị dữ liệu đến huấn luyện và đánh giá.
 
-⏭️ After completing the tutorial, you can explore the [ORPO](./orpo.md) page to learn about another preference alignment technique.
+⏭️ Sau khi hoàn thành hướng dẫn, bạn có thể khám phá về [ORPO](./orpo.md) để tìm hiểu về một kỹ thuật tinh chỉnh ưu tiên khác.
