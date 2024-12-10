@@ -2,7 +2,7 @@
 
 Trong chương này chúng ta sẽ học về quá trình tinh chỉnh mô hình ngôn ngữ theo chỉ thị. Tinh chỉnh theo chỉ thị là quá trình điều chỉnh *pre-trained models* cho các tác vụ cụ thể bằng cách tiếp tục huấn luyện chúng trên các tập dữ liệu đặc thù cho tác vụ. Quá trình này giúp các mô hình cải thiện hiệu suất trên những tác vụ đó.
 
-Chúng ta sẽ cùng khám phá hai chủ đề chính: 1) Chat Templates và 2) Huấn luyện có giám sát (Supervised Fine-Tuning).
+Chúng ta sẽ cùng khám phá hai chủ đề chính: 1) Chat Templates và 2) Tinh chỉnh có giám sát (Supervised Fine-Tuning).
 
 ## 1️⃣ Chat Templates
 
