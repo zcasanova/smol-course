@@ -32,7 +32,7 @@ Khoá học này cung cấp phương pháp thực hành để làm việc với 
 |--------|-------------|---------|--------------|
 | [Tinh chỉnh theo chỉ thị (Instruction Tuning)](./1_instruction_tuning) | Học về huấn luyện có giám sát (SFT), định dạng chat, và thực hiện các chỉ thị cơ bản | ✅ Sẵn sàng | 3/12/2024 |
 | [Tinh chỉnh theo sự ưu tiên (Preference Alignment)](./2_preference_alignment) | Học các kỹ thuật DPO và ORPO để huấn luyện mô hình theo sự uy tiên của người dùng | ✅ Sẵn sàng  | 6/12/2024 |
-| [Huấn luyện hiệu quả (Parameter-efficient Fine-tuning)](./3_parameter_efficient_finetuning) | Học về LoRA, prompt tuning và các phương pháp huấn luyện hiệu quả | ✅ Sẵn sàng | 9/12/2024 |
+| [Tinh chỉnh hiệu quả tham số (Parameter-efficient Fine-tuning)](./3_parameter_efficient_finetuning) | Học về LoRA, prompt tuning và các phương pháp huấn luyện hiệu quả | ✅ Sẵn sàng | 9/12/2024 |
 | [Đánh giá mô hình (Evaluation)](./4_evaluation) | Sử dụng benchmark tự động và tạo đánh giá theo lĩnh vực cụ thể | [🚧 Đang thực hiện](https://github.com/huggingface/smol-course/issues/42) | 13/12/2024 |
 | [Mô hình đa phương thức (Vision-language Models)](./5_vision_language_models) | Điều chỉnh các mô hình đa phương thức (Multimodal models) cho các tác vụ thị giác-ngôn ngữ | [🚧 Đang thực hiện](https://github.com/huggingface/smol-course/issues/49) | 16/12/2024 |
 | [Dữ liệu nhân tạo (Synthetic Datasets)](./6_synthetic_datasets) | Tạo và đánh giá tập dữ liệu tổng hợp cho huấn luyện | 📝 Đã lên kế hoạch | 20/12/2024 |
