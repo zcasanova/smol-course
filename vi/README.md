@@ -30,7 +30,7 @@ Khoá học này cung cấp phương pháp thực hành để làm việc với 
 
 | Bài | Mô tả | Trạng thái | Ngày phát hành |
 |--------|-------------|---------|--------------|
-| [Huấn luyện theo chỉ thị (Instruction Tuning)](./1_instruction_tuning) | Học về huấn luyện có giám sát (SFT), templating chat, và thực hiện các chỉ thị cơ bản | ✅ Sẵn sàng | 3/12/2024 |
+| [Huấn luyện theo chỉ thị (Instruction Tuning)](./1_instruction_tuning) | Học về huấn luyện có giám sát (SFT), định dạng chat, và thực hiện các chỉ thị cơ bản | ✅ Sẵn sàng | 3/12/2024 |
 | [Huấn luyện theo sự uy tiên (Preference Alignment)](./2_preference_alignment) | Học các kỹ thuật DPO và ORPO để huấn luyện mô hình theo sự uy tiên của người dùng | ✅ Sẵn sàng  | 6/12/2024 |
 | [Huấn luyện hiệu quả (Parameter-efficient Fine-tuning)](./3_parameter_efficient_finetuning) | Học về LoRA, prompt tuning và các phương pháp huấn luyện hiệu quả | ✅ Sẵn sàng | 9/12/2024 |
 | [Đánh giá mô hình (Evaluation)](./4_evaluation) | Sử dụng benchmark tự động và tạo đánh giá theo lĩnh vực cụ thể | [🚧 Đang thực hiện](https://github.com/huggingface/smol-course/issues/42) | 13/12/2024 |
@@ -90,6 +90,6 @@ pip install -r transformers trl datasets huggingface_hub
 
 ## Tham gia
 
-Hãy chia sẻ khoá học này, để cùng nhau phát triển cộng đồng LLM Việt Nam
+Hãy chia sẻ khoá học này, để cùng nhau phát triển cộng đồng AI Việt Nam.
 
-[![Star History Chart](https://api.star-history.com/svg?repos=huggingface/smol-course&type=Date)](https://star-history.com/#huggingface/smol-course&Date)
+[![Biều đồ sao của khoá học](https://api.star-history.com/svg?repos=huggingface/smol-course&type=Date)](https://star-history.com/#huggingface/smol-course&Date)
