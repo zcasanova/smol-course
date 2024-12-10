@@ -2,7 +2,7 @@
 
 Trong chương này chúng ta sẽ học về quá trình tinh chỉnh mô hình ngôn ngữ theo chỉ thị. Tinh chỉnh theo chỉ thị là quá trình điều chỉnh *pre-trained models* cho các tác vụ cụ thể bằng cách tiếp tục huấn luyện chúng trên các tập dữ liệu đặc thù cho tác vụ. Quá trình này giúp các mô hình cải thiện hiệu suất trên những tác vụ đó.
 
-Chúng ta sẽ cùng khám phá hai chủ đề chính: 1) Chat Templates và 2) Tinh chỉnh có giám sát (Supervised Fine-Tuning).
+Chúng ta sẽ cùng khám phá hai chủ đề chính: 1) Định dạng Chat (Chat Templates) và 2) Tinh chỉnh có giám sát (Supervised Fine-Tuning).
 
 ## 1️⃣ Định dạng Chat (Chat Templates)
 
@@ -21,7 +21,7 @@ Huấn luyện có giám sát (SFT) là một quá trình cốt lõi để đi�
 
 ## Tài liệu tham khảo
 
-- [Tài liệu Transformers về chat templates](https://huggingface.co/docs/transformers/main/en/chat_templating)
+- [Tài liệu Transformers về định dạng chat](https://huggingface.co/docs/transformers/main/en/chat_templating)
 - [Script cho huấn luyện có giám sát bằng thư viện TRL](https://github.com/huggingface/trl/blob/main/examples/scripts/sft.py)
 - [`SFTTrainer` trong thư viện TRL](https://huggingface.co/docs/trl/main/en/sft_trainer)
 - [Bài báo Direct Preference Optimization (DPO)](https://arxiv.org/abs/2305.18290)
