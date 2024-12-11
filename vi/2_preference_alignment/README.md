@@ -1,6 +1,6 @@
 # Tinh Chỉnh Theo Sự Ưu Tiên (Preference Alignment)
 
-Trong chương này, bạn sẽ học về các kỹ thuật tinh chỉnh mô hình ngôn ngữ theo sự ưu tiên của chúng ta. Trong khi *học có giám sát* giúp mô hình học các tác vụ, *tinh chỉnh theo sự ưu tiên* khuyến khích đầu ra phù hợp với kỳ vọng và giá trị mong muốn của chúng ta.
+Trong chương này, bạn sẽ học về các kỹ thuật tinh chỉnh mô hình ngôn ngữ theo sự ưu tiên của con người. Trong khi *học có giám sát* giúp mô hình học các tác vụ, *tinh chỉnh theo sự ưu tiên* khuyến khích đầu ra phù hợp với kỳ vọng và giá trị của con người.
 
 ## Tổng Quan
 
@@ -11,11 +11,11 @@ Các phương pháp *tinh chỉnh theo sự ưu tiên* thường bao gồm 2 gia
 
 Các phương pháp thay thế như ORPO kết hợp cả *tinh chỉnh theo chỉ thị* và *tinh chỉnh theo sự ưu tiên* thành 1 giai đoạn tinh chỉnh duy nhất. Ở đây, chúng ta sẽ tập trung vào các thuật toán DPO và ORPO.
 
-Nếu bạn muốn tìm hiểu thêm về các kỹ thuật tinh chỉnh khác nhau, bạn có thể đọc thêm tại [Argilla Blog](https://argilla.io/blog/mantisnlp-rlhf-part-8).
+Nếu bạn muốn tìm hiểu thêm về các kỹ thuật tinh chỉnh khác, bạn có thể đọc thêm tại [Argilla Blog](https://argilla.io/blog/mantisnlp-rlhf-part-8).
 
 ### 1️⃣ Tối Ưu Hóa Ưu Tiên Trực Tiếp (Direct Preference Optimization - DPO)
 
-Phương pháp này đơn giản hóa quá trình *tinh chỉnh theo chỉ thị* bằng cách tối ưu hóa trực tiếp mô hình sử dụng dữ liệu preference. Phương pháp này loại bỏ nhu cầu về các *Mô hình thưởng phạt* (Reward model) riêng biệt và *Học tăng cường* phức tạp, giúp quá trình ổn định và hiệu quả hơn so với Học tăng cường từ phản hồi của con người (RLHF) truyền thống. Để biết thêm chi tiết, bạn có thể tham khảo tài liệu [*tối ưu hóa ưu tiên trực tiếp* (DPO)](./dpo.md).
+Phương pháp này đơn giản hóa quá trình *tinh chỉnh theo chỉ thị* bằng cách tối ưu hóa trực tiếp mô hình sử dụng dữ liệu ưu tiên (preference data). Phương pháp này loại bỏ nhu cầu về các *Mô hình thưởng phạt* (Reward model) riêng biệt và *Học tăng cường* phức tạp, giúp quá trình ổn định và hiệu quả hơn so với Học tăng cường từ phản hồi của con người (RLHF) truyền thống. Để biết thêm chi tiết, bạn có thể tham khảo tài liệu [*tối ưu hóa ưu tiên trực tiếp* (DPO)](./dpo.md).
 
 ### 2️⃣ Tối Ưu Hóa Ưu Tiên Theo Tỷ Lệ Odds (Odds Ratio Preference Optimization - ORPO)
 
