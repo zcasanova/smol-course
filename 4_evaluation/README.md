@@ -16,11 +16,17 @@ Learn to evaluate your model using standardized benchmarks and metrics. We'll ex
 
 
 ### 2️⃣ [Custom Domain Evaluation](./custom_evaluation.md)
-
 Discover how to create evaluation pipelines tailored to your specific use case. We'll walk through designing custom evaluation tasks, implementing specialized metrics, and building evaluation datasets that match your requirements.
 
 ### 3️⃣ [Domain Evaluation Project](./project/README.md)
 Follow a complete example of building a domain-specific evaluation pipeline. You'll learn to generate evaluation datasets, use Argilla for data annotation, create standardized datasets, and evaluate models using LightEval.
+
+### Exercise Notebooks
+
+| Title | Description | Exercise | Link | Colab |
+|-------|-------------|----------|------|-------|
+| Evaluate and Analyze Your LLM | Learn how to use LightEval to evaluate and compare models on specific domains | 🐢 Use medical domain tasks to evaluate a model <br> 🐕 Create a new domain evaluation with different MMLU tasks <br> 🦁 Create a custom evaluation task for your domain | [Notebook](./notebooks/lighteval_evaluate_and_analyse_your_LLM.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/4_evaluation/notebooks/lighteval_evaluate_and_analyse_your_LLM.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+
 
 ## Resources
 
@@ -28,3 +34,6 @@ Follow a complete example of building a domain-specific evaluation pipeline. You
 - [LightEval Documentation](https://github.com/huggingface/lighteval) - Official docs for the LightEval library
 - [Argilla Documentation](https://docs.argilla.io) - Learn about the Argilla annotation platform
 - [MMLU Paper](https://arxiv.org/abs/2009.03300) - Paper describing the MMLU benchmark
+- [Creating a Custom Task](https://github.com/huggingface/lighteval/wiki/Adding-a-Custom-Task)
+- [Creating a Custom Metric](https://github.com/huggingface/lighteval/wiki/Adding-a-New-Metric)
+- [Using existing metrics](https://github.com/huggingface/lighteval/wiki/Metric-List)
