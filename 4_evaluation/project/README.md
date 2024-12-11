@@ -82,18 +82,4 @@ You can find detailed guides in lighteval wiki about each of these steps:
 - [Creating a Custom Metric](https://github.com/huggingface/lighteval/wiki/Adding-a-New-Metric)
 - [Using existing metrics](https://github.com/huggingface/lighteval/wiki/Metric-List)
 
-## Requirements
 
-This tutorial requires dependencies which you can install using the following command:
-
-```sh
-pip install -r requirements.txt
-```
-
-## Contributing
-
-Feel free to contribute to this project by submitting issues or pull requests. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-[MIT License](https://opensource.org/licenses/MIT)
