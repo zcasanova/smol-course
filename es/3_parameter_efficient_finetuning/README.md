@@ -1,39 +1,40 @@
-# Alineación de Preferencias
+# Fine-Tuning Eficiente en Parámetros (PEFT)
 
-Este módulo cubre técnicas para alinear los modelos de lenguaje con las preferencias humanas. Mientras que el ajuste supervisado ayuda a los modelos a aprender tareas, la alineación de preferencias fomenta que las salidas coincidan con las expectativas y valores humanos.
+A medida que los modelos de lenguaje se hacen más grandes, el *fine-tuning* tradicional se vuelve cada vez más complicado. Afinar completamente un modelo con 1.7 mil millones de parámetros, por ejemplo, requiere una memoria de GPU significativa, hace costoso almacenar copias separadas del modelo y puede ocasionar un olvido catastrófico de las capacidades originales del modelo. Los métodos de *fine-tuning* eficiente en parámetros (*Parameter-Efficient Fine-Tuning* o PEFT) abordan estos problemas modificando solo un subconjunto pequeño de los parámetros del modelo, mientras que la mayor parte del modelo permanece congelada.
 
-## Visión General
+El *fine-tuning* tradicional actualiza todos los parámetros del modelo durante el entrenamiento, lo cual resulta poco práctico para modelos grandes. Los métodos PEFT introducen enfoques para adaptar modelos utilizando una fracción mínima de parámetros entrenables, generalmente menos del 1% del tamaño original del modelo. Esta reducción dramática permite:
 
-Los métodos típicos de alineación involucran varias etapas:
-1. Ajuste Supervisado (SFT) para adaptar los modelos a dominios específicos.
-2. Alineación de preferencias (como RLHF o DPO) para mejorar la calidad de las respuestas.
+- Realizar *fine-tuning* en hardware de consumo con memoria de GPU limitada.
+- Almacenar múltiples adaptaciones específicas de tareas de forma eficiente.
+- Mejorar la generalización en escenarios con pocos datos.
+- Entrenamientos y ciclos de iteración más rápidos.
 
-Enfoques alternativos como ORPO combinan el ajuste de instrucciones y la alineación de preferencias en un solo proceso. Aquí, nos enfocaremos en los algoritmos DPO y ORPO.
+## Métodos Disponibles
 
-Si deseas aprender más sobre las diferentes técnicas de alineación, puedes leer más sobre ellas en el [Blog de Argilla](https://argilla.io/blog/mantisnlp-rlhf-part-8).
+En este módulo, se cubrirán dos métodos populares de PEFT:
 
-### 1️⃣ Optimización Directa de Preferencias (DPO)
+### 1️⃣ LoRA (Adaptación de Bajo Rango)
 
-La Optimización Directa de Preferencias (DPO) simplifica la alineación de preferencias optimizando directamente los modelos utilizando datos de preferencias. Este enfoque elimina la necesidad de modelos de recompensa separados y de un complejo aprendizaje por refuerzo, lo que lo hace más estable y eficiente que el aprendizaje por refuerzo de retroalimentación humana (RLHF) tradicional. Para más detalles, puedes consultar la [documentación de DPO](./dpo.md).
+LoRA se ha convertido en el método PEFT más adoptado, ofreciendo una solución elegante para la adaptación eficiente de modelos. En lugar de modificar el modelo completo, **LoRA inyecta matrices entrenables en las capas de atención del modelo.** Este enfoque reduce típicamente los parámetros entrenables en aproximadamente un 90%, manteniendo un rendimiento comparable al *fine-tuning* completo. Exploraremos LoRA en la sección [LoRA (Adaptación de Bajo Rango)](./lora_adapters.md).
 
-### 2️⃣ Optimización de Preferencias por Razón de Probabilidades (ORPO)
+### 2️⃣ *Prompt Tuning*
 
-ORPO introduce un enfoque combinado para el ajuste de instrucciones y la alineación de preferencias en un solo proceso. Modifica el objetivo estándar de modelado de lenguaje al combinar la pérdida de log-verosimilitud negativa con un término de razón de probabilidades a nivel de tokens. El enfoque presenta un proceso de entrenamiento unificado de una sola etapa, una arquitectura sin referencia al modelo y una mayor eficiencia computacional. ORPO ha mostrado resultados impresionantes en varios puntos de referencia, demostrando un mejor rendimiento en AlpacaEval en comparación con los métodos tradicionales. Para más detalles, puedes consultar la [documentación de ORPO](./orpo.md).
+El *prompt tuning* ofrece un enfoque **aún más ligero** al **añadir tokens entrenables a la entrada** en lugar de modificar los pesos del modelo. Aunque es menos popular que LoRA, puede ser útil para adaptar rápidamente un modelo a nuevas tareas o dominios. Exploraremos el *prompt tuning* en la sección [Prompt Tuning](./prompt_tuning.md).
 
-## Notebook de Ejercicios
+## Notebooks de Ejercicios
 
-| Título           | Descripción | Ejercicio | Enlace | Colab |
-|------------------|-------------|-----------|--------|-------|
-| Entrenamiento DPO | Aprende cómo entrenar modelos usando Optimización Directa de Preferencias | 🐢 Entrenar un modelo usando el conjunto de datos Anthropic HH-RLHF<br>🐕 Usar tu propio conjunto de datos de preferencias<br>🦁 Experimentar con diferentes conjuntos de datos de preferencias y tamaños de modelo | [Notebook](./notebooks/dpo_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/2_preference_alignment/notebooks/dpo_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Abrir en Colab"/></a> |
-| Entrenamiento ORPO | Aprende cómo entrenar modelos usando Optimización de Preferencias por Razón de Probabilidades | 🐢 Entrenar un modelo usando datos de instrucciones y preferencias<br>🐕 Experimentar con diferentes ponderaciones de pérdidas<br>🦁 Comparar los resultados de ORPO con DPO | [Notebook](./notebooks/orpo_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/2_preference_alignment/notebooks/orpo_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Abrir en Colab"/></a> |
+| Título | Descripción | Ejercicio | Enlace | Colab |
+|-------|-------------|-----------|--------|-------|
+| *Fine-tuning* con LoRA | Aprende a realizar *fine-tuning* con adaptadores LoRA | 🐢 Entrenar un modelo con LoRA<br>🐕 Experimentar con diferentes valores de rango<br>🦁 Comparar el rendimiento con el *fine-tuning* completo | [Notebook](./notebooks/finetune_sft_peft.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/3_parameter_efficient_finetuning/notebooks/finetune_sft_peft.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Abrir en Colab"/></a> |
+| Cargar Adaptadores LoRA | Aprende a cargar y usar adaptadores LoRA entrenados | 🐢 Cargar adaptadores preentrenados<br>🐕 Combinar adaptadores con el modelo base<br>🦁 Alternar entre múltiples adaptadores | [Notebook](./notebooks/load_lora_adapter_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/3_parameter_efficient_finetuning/notebooks/load_lora_adapter_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Abrir en Colab"/></a> |
+
+<!-- | Prompt Tuning | Aprende a implementar *prompt tuning* | 🐢 Entrenar *soft prompts*<br>🐕 Comparar diferentes estrategias de inicialización<br>🦁 Evaluar en múltiples tareas | [Notebook](./notebooks/prompt_tuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/3_parameter_efficient_finetuning/notebooks/prompt_tuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Abrir en Colab"/></a> | -->
 
 ## Recursos
-
-- [Documentación de TRL](https://huggingface.co/docs/trl/index) - Documentación de la biblioteca Transformers Reinforcement Learning (TRL), que implementa varias técnicas de alineación, incluyendo DPO.
-- [Papel de DPO](https://arxiv.org/abs/2305.18290) - Artículo de investigación original que introduce la Optimización Directa de Preferencias como una alternativa más simple al RLHF, optimizando directamente los modelos de lenguaje utilizando datos de preferencias.
-- [Papel de ORPO](https://arxiv.org/abs/2402.01714) - Introduce la Optimización de Preferencias por Razón de Probabilidades, un enfoque novedoso que combina el ajuste de instrucciones y la alineación de preferencias en una sola etapa de entrenamiento.
-- [Guía de RLHF de Argilla](https://argilla.io/blog/mantisnlp-rlhf-part-8/) - Una guía que explica diferentes técnicas de alineación, incluyendo RLHF, DPO y sus implementaciones prácticas.
-- [Blog sobre DPO](https://huggingface.co/blog/dpo-trl) - Guía práctica sobre cómo implementar DPO utilizando la biblioteca TRL con ejemplos de código y mejores prácticas.
-- [Script de ejemplo de TRL sobre DPO](https://github.com/huggingface/trl/blob/main/examples/scripts/dpo.py) - Script de ejemplo completo que muestra cómo implementar el entrenamiento DPO utilizando la biblioteca TRL.
-- [Script de ejemplo de TRL sobre ORPO](https://github.com/huggingface/trl/blob/main/examples/scripts/orpo.py) - Implementación de referencia del entrenamiento ORPO utilizando la biblioteca TRL con opciones detalladas de configuración.
-- [Manual de Alineación de Hugging Face](https://github.com/huggingface/alignment-handbook) - Guías de recursos y base de código para alinear modelos de lenguaje utilizando diversas técnicas, incluyendo SFT, DPO y RLHF.
+- [Documentación de PEFT](https://huggingface.co/docs/peft)
+- [Artículo de LoRA](https://arxiv.org/abs/2106.09685)
+- [Artículo de QLoRA](https://arxiv.org/abs/2305.14314)
+- [Artículo de *Prompt Tuning*](https://arxiv.org/abs/2104.08691)
+- [Guía de PEFT en Hugging Face](https://huggingface.co/blog/peft)
+- [Cómo hacer *Fine-Tuning* de LLMs en 2024 con Hugging Face](https://www.philschmid.de/fine-tune-llms-in-2024-with-trl)
+- [TRL](https://huggingface.co/docs/trl/index)
