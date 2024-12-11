@@ -92,4 +92,4 @@ pip install -r transformers trl datasets huggingface_hub
 
 Hãy chia sẻ khoá học này, để cùng nhau phát triển cộng đồng AI Việt Nam.
 
-[![Biều đồ sao của khoá học](https://api.star-history.com/svg?repos=huggingface/smol-course&type=Date)](https://star-history.com/#huggingface/smol-course&Date)
+[![Biểu đồ sao của khoá học](https://api.star-history.com/svg?repos=huggingface/smol-course&type=Date)](https://star-history.com/#huggingface/smol-course&Date)
