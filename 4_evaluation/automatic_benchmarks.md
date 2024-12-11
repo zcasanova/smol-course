@@ -128,5 +128,4 @@ You can also handle the results in a pandas DataFrame and visualise or represent
 
 # Next Steps
 
-- Explore [Custom Domain Evaluation](./custom_evaluation.md) to learn how to create evaluation pipelines tailored to your specific needs
-- Check out the [Domain Evaluation Project](./project/README.md) for a complete example of building a domain-specific evaluation pipeline
+⏩ Explore [Custom Domain Evaluation](./custom_evaluation.md) to learn how to create evaluation pipelines tailored to your specific needs
