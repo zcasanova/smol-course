@@ -1,30 +1,30 @@
-# Instruction Tuning
+# Instruction Tuning (Ajuste de Instrução)
 
-This module will guide you through instruction tuning language models. Instruction tuning involves adapting pre-trained models to specific tasks by further training them on task-specific datasets. This process helps models improve their performance on targeted tasks. 
+Este módulo o guiará através de modelos de linguagem de ajuste de instrução. O ajuste de instrução envolve a adaptação de modelos pré-treinados a tarefas específicas, treinando-os ainda mais em conjuntos de dados específicos de tarefas. Esse processo ajuda os modelos a melhorar seu desempenho em certas tarefas específicas.
 
-In this module, we will explore two topics: 1) Chat Templates and 2) Supervised Fine-Tuning.
+Neste módulo, exploraremos dois tópicos: 1) Modelos de bate-papo e 2) Ajuste fino supervisionado.
 
-## 1️⃣ Chat Templates
+## 1️⃣ Modelos de Bate-Papo
 
-Chat templates structure interactions between users and AI models, ensuring consistent and contextually appropriate responses. They include components like system prompts and role-based messages. For more detailed information, refer to the [Chat Templates](./chat_templates.md) section.
+Modelos de bate-papo estruturam interações entre usuários e modelos de IA, garantindo respostas consistentes e contextualmente apropriadas. Eles incluem componentes como avisos de sistema e mensagens baseadas em funções. Para informações mais detalhadas, Consulte a seção [Chat Templates (Modelos de Bate-Papo)](./chat_templates.md).
 
-## 2️⃣ Supervised Fine-Tuning
+## 2️⃣ Ajuste Fino Supervisionado
 
-Supervised Fine-Tuning (SFT) is a critical process for adapting pre-trained language models to specific tasks. It involves training the model on a task-specific dataset with labeled examples. For a detailed guide on SFT, including key steps and best practices, see the [Supervised Fine-Tuning](./supervised_fine_tuning.md) page.
+Ajuste fino supervisionado (em inglês, SFT - Supervised Fine-Tuning) é um processo crítico para adaptar modelos de linguagem pré-treinados a tarefas específicas. O ajuste envolve treinar o modelo em um conjunto de dados de uma tarefa específica com exemplos rotulados. Para um guia detalhado sobre SFT, incluindo etapas importantes e práticas recomendadas, veja a página [Supervised Fine-Tuning (Ajuste Fino Supervisionado)](./supervised_fine_tuning.md).
 
-## Exercise Notebooks
+## Cadernos de Exercícios
 
-| Title | Description | Exercise | Link | Colab |
+| Título | Descrição | Exercício | Link | Colab |
 |-------|-------------|----------|------|-------|
-| Chat Templates | Learn how to use chat templates with SmolLM2 and process datasets into chatml format | 🐢 Convert the `HuggingFaceTB/smoltalk` dataset into chatml format <br> 🐕 Convert the `openai/gsm8k` dataset into chatml format | [Notebook](./notebooks/chat_templates_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/1_instruction_tuning/notebooks/chat_templates_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
-| Supervised Fine-Tuning | Learn how to fine-tune SmolLM2 using the SFTTrainer | 🐢 Use the `HuggingFaceTB/smoltalk` dataset<br>🐕 Try out the `bigcode/the-stack-smol` dataset<br>🦁 Select a dataset for a real world use case | [Notebook](./notebooks/sft_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/1_instruction_tuning/notebooks/sft_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| Modelos de Bate-Papo | Aprenda a usar modelos de bate-papo com SmolLM2 and a processar conjunto de dados para o formato chatml | 🐢 Converta o conjunto de dados `HuggingFaceTB/smoltalk` para o formato chatml<br> 🐕 Converta o conjunto de dados `openai/gsm8k` para o formato chatml | [Exercício](./notebooks/chat_templates_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/1_instruction_tuning/notebooks/chat_templates_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
+| Ajuste Fino Supervisionado | Aprenda como fazer o ajuste fino no modelo SmolLM2 usando o SFTTrainer | 🐢 Use o conjunto de dados `HuggingFaceTB/smoltalk`<br>🐕 Experimente o conjunto de dados `bigcode/the-stack-smol`<br>🦁 Selecione um conjunto de dados para um caso de uso do mundo real | [Exercício](./notebooks/sft_finetuning_example.ipynb) | <a target="_blank" href="https://colab.research.google.com/github/huggingface/smol-course/blob/main/1_instruction_tuning/notebooks/sft_finetuning_example.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a> |
 
-## References
+## Referências
 
-- [Transformers documentation on chat templates](https://huggingface.co/docs/transformers/main/en/chat_templating)
-- [Script for Supervised Fine-Tuning in TRL](https://github.com/huggingface/trl/blob/main/examples/scripts/sft.py)
-- [`SFTTrainer` in TRL](https://huggingface.co/docs/trl/main/en/sft_trainer)
-- [Direct Preference Optimization Paper](https://arxiv.org/abs/2305.18290)
-- [Supervised Fine-Tuning with TRL](https://huggingface.co/docs/trl/main/en/tutorials/supervised_finetuning)
-- [How to fine-tune Google Gemma with ChatML and Hugging Face TRL](https://www.philschmid.de/fine-tune-google-gemma)
-- [Fine-tuning LLM to Generate Persian Product Catalogs in JSON Format](https://huggingface.co/learn/cookbook/en/fine_tuning_llm_to_generate_persian_product_catalogs_in_json_format)
+- [Documentação dos transformadores em modelos de bate-papo](https://huggingface.co/docs/transformers/main/en/chat_templating)
+- [Script para ajuste fino supervisionado em TRL](https://github.com/huggingface/trl/blob/main/examples/scripts/sft.py)
+- [`SFTTrainer` em TRL](https://huggingface.co/docs/trl/main/en/sft_trainer)
+- [Artigo de otimização de preferência direta](https://arxiv.org/abs/2305.18290)
+- [Ajuste fino supervisionado com TRL](https://huggingface.co/docs/trl/main/en/tutorials/supervised_finetuning)
+- [Como ajustar o Google Gemma com ChatML e Hugging Face TRL](https://www.philschmid.de/fine-tune-google-gemma)
+- [Fazendo o ajuste fino em uma LLM para gerar catálogos de produtos persas em formato JSON](https://huggingface.co/learn/cookbook/en/fine_tuning_llm_to_generate_persian_product_catalogs_in_json_format)

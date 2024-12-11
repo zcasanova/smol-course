@@ -1,41 +1,41 @@
-# Supervised Fine-Tuning
+# Ajuste Fino Supervisionado
 
-Supervised Fine-Tuning (SFT) is a critical process for adapting pre-trained language models to specific tasks or domains. While pre-trained models have impressive general capabilities, they often need to be customized to excel at particular use cases. SFT bridges this gap by further training the model on carefully curated datasets with human-validated examples.
+Ajuste fino supervisionado (em inglês, SFT - Supervised Fine-Tuning) é um processo crítico para adaptar modelos de linguagem pré-treinados a tarefas ou domínios específicos. Embora os modelos pré-treinados tenham recursos gerais impressionantes, eles geralmente precisam ser personalizados para se destacar em casos de usos específicos. O SFT preenche essa lacuna treinando ainda mais o modelo com conjuntos de dados cuidadosamente selecionados com exemplos validados por humanos.
 
-## Understanding Supervised Fine-Tuning
+## Entendendo o Ajuste Fino Supervisionado
 
-At its core, supervised fine-tuning is about teaching a pre-trained model to perform specific tasks through examples of labeled tokens. The process involves showing the model many examples of the desired input-output behavior, allowing it to learn the patterns specific to your use case.
+Na sua essência, o ajuste fino supervisionado é sobre ensinar um modelo pré-treinado a executar tarefas específicas por meio de exemplos de tokens rotulados. O processo envolve mostrar muitos exemplos do comportamento desejado de input-output ao modelo, permitindo que ele aprenda os padrões específicos do seu caso de uso.
 
-SFT is effective because it uses the foundational knowledge acquired during pre-training while adapting the model's behavior to match your specific needs.
+O SFT é eficaz porque usa o conhecimento fundamental adquirido durante o pré-treinamento, adaptando o comportamento do modelo para atender às suas necessidades específicas.
 
-## When to Use Supervised Fine-Tuning
+## Quando Usar o Ajuste Fino Supervisionado
 
-The decision to use SFT often comes down to the gap between your model's current capabilities and your specific requirements. SFT becomes particularly valuable when you need precise control over the model's outputs or when working in specialized domains.
+A decisão de usar o SFT geralmente se resume à lacuna entre os recursos atuais do seu modelo e seus requisitos específicos. O SFT se torna particularmente valioso quando você precisa de controle preciso sobre os outputs do modelo ou ao trabalhar em domínios especializados.
 
-For example, if you're developing a customer service application, you might want your model to consistently follow company guidelines and handle technical queries in a standardized way. Similarly, in medical or legal applications, accuracy and adherence to domain-specific terminology becomes crucial. In these cases, SFT can help align the model's responses with professional standards and domain expertise.
+Por exemplo, se você estiver desenvolvendo um aplicativo de atendimento ao cliente, você vai querer que seu modelo siga constantemente as diretrizes da empresa e lide com consultas técnicas de maneira padronizada. Da mesma forma, em aplicações médicas ou legais, a precisão e a adesão à terminologia específica do domínio se tornam cruciais. Nesses casos, o SFT pode ajudar a alinhar as respostas do modelo com padrões profissionais e experiência no campo de trabalho.
 
-## The Fine-Tuning Process
+## O Processo de Ajuste Fino
 
-The supervised fine-tuning process involves training model weights on a task-specific dataset. 
+O processo de ajuste fino supervisionado envolve o treinamento dos pesos do modelo em um conjunto de dados de tarefa específico. 
 
-First, you'll need to prepare or select a dataset that represents your target task. This dataset should include diverse examples that cover the range of scenarios your model will encounter. The quality of this data is important - each example should demonstrate the kind of output you want your model to produce. Next comes the actual fine-tuning phase, where you'll use frameworks like Hugging Face's `transformers` and `trl` to train the model on your dataset. 
+Primeiro, você precisará preparar ou selecionar um conjunto de dados que represente sua tarefa. Esse conjunto de dados deve incluir diversos exemplos que cobrem a gama de cenários que seu modelo encontrará. A qualidade desses dados é importante - cada exemplo deve demonstrar o tipo de output que você deseja que seu modelo produza. Em seguida, vem a fase real de ajuste fino, onde você usará estruturas como os módulos do Hugging Face, `transformers` e `trl`, para treinar o modelo no seu conjunto de dados. 
 
-Throughout the process, continuous evaluation is essential. You'll want to monitor the model's performance on a validation set to ensure it's learning the desired behaviors without losing its general capabilities. In [module 4](../4_evaluation), we'll cover how to evaluate your model.
+Ao longo do processo, a avaliação contínua é essencial. Você vai querer monitorar o desempenho do modelo em um conjunto de validação para garantir que ele esteja aprendendo os comportamentos desejados sem perder suas capacidades gerais. No [Módulo 4](../4_evaluation), abordaremos como avaliar seu modelo.
 
-## The Role of SFT in Preference Alignment
+## O Papel do SFT no Alinhamento de Preferência
 
-SFT plays a fundamental role in aligning language models with human preferences. Techniques such as Reinforcement Learning from Human Feedback (RLHF) and Direct Preference Optimization (DPO) rely on SFT to form a base level of task understanding before further aligning the model’s responses with desired outcomes. Pre-trained models, despite their general language proficiency, may not always generate outputs that match human preferences. SFT bridges this gap by introducing domain-specific data and guidance, which improves the model’s ability to generate responses that align more closely with human expectations.
+O SFT desempenha um papel fundamental no alinhamento de modelos de linguagem com preferências humanas. Técnicas como o aprendizado de reforço com o feedback humano (RLHF - Reinforcement Learning with Human Feedback) e a otimização de preferência direta (DPO - Direct Preference Optimization) dependem do SFT para formar um nível básico de entendimento da tarefa antes de alinhar ainda mais as respostas do modelo com os resultados desejados. Modelos pré-treinados, apesar de sua proficiência em linguagem geral, nem sempre podem gerar resultados que correspondam às preferências humanas. O SFT preenche essa lacuna introduzindo dados e orientações específicos de domínio, o que melhora a capacidade do modelo de gerar respostas que se alinham mais de perto com as expectativas humanas.
 
-## Supervised Fine-Tuning With Transformer Reinforcement Learning
+## Ajuste Fino Supervisionado com Aprendizado de Reforço de Transformadores
 
-A key software package for Supervised Fine-Tuning is Transformer Reinforcement Learning (TRL). TRL is a toolkit used to train transformer language models models using reinforcement learning (RL).
+Um pacote de software importante para ajuste fino supervisionado é o aprendizado de reforço de transformadores (TRL - Transformer Reinforcement Learning). TRL é um kit de ferramentas usado para treinar modelos de linguagem de transformação usando o aprendizado de reforço.
 
-Built on top of the Hugging Face Transformers library, TRL allows users to directly load pretrained language models and supports most decoder and encoder-decoder architectures. The library facilitates major processes of RL used in language modelling, including supervised fine-tuning (SFT), reward modeling (RM), proximal policy optimization (PPO), and Direct Preference Optimization (DPO). We will use TRL in a number of modules throughout this repo.
+Construído em cima do módulo de transformadores do Hugging Face, o TRL permite que os usuários carreguem diretamente modelos de linguagem pré-treinados e suporta a maioria das arquiteturas decodificadoras e codificador-decodificador. O módulo facilita os principais processos de RL usados ​​na modelagem de linguagem, incluindo ajuste fino supervisionado (SFT), modelagem de recompensa (RM - Reward Modeling), otimização de políticas proximais (PPO - Proximal Policy Optimization) e otimização de preferência direta (DPO). Usaremos o TRL em vários módulos ao longo deste repositório.
 
-# Next Steps
+# Próximos passos
 
-Try out the following tutorials to get hands on experience with SFT using TRL:
+Experimente os seguintes tutoriais para obter experiência com o SFT usando TRL:
 
-⏭️ [Chat Templates Tutorial](./notebooks/chat_templates_example.ipynb)
+⏭️ [Tutorial de modelos de bate-papo](./notebooks/chat_templates_example.ipynb)
 
-⏭️ [Supervised Fine-Tuning Tutorial](./notebooks/supervised_fine_tuning_tutorial.ipynb)
+⏭️ [Tutorial de ajuste fino supervisionado](./notebooks/sft_finetuning_example.ipynb)
