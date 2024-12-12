@@ -35,7 +35,7 @@ Los adaptadores también son convenientes para cambiar entre diferentes tareas o
 
 El directorio `notebooks/` contiene tutoriales prácticos y ejercicios para implementar diferentes métodos PEFT. Comienza con `load_lora_adapter_example.ipynb` para una introducción básica, y luego explora `lora_finetuning.ipynb` para un análisis más detallado de cómo realizar fine-tuning en un modelo con LoRA y SFT.
 
-Cuando implementes métodos PEFT, comienza con valores de rango pequeños (4-8) para LoRA y monitoriza la pérdida durante el entrenamiento. Utiliza conjuntos de validación para evitar el sobreajuste y compara los resultados con los baselines de fine-tuning completo cuando sea posible. La efectividad de los diferentes métodos puede variar según la tarea, por lo que la experimentación es clave.
+Cuando implementes métodos PEFT, comienza con valores de rango pequeños (4-8) para LoRA y monitoriza la pérdida durante el entrenamiento. Utiliza conjuntos de validación para evitar el sobreajuste y compara los resultados con los baselines del fine-tuning completo cuando sea posible. La efectividad de los diferentes métodos puede variar según la tarea, por lo que la experimentación es clave.
 
 ## OLoRA
 
