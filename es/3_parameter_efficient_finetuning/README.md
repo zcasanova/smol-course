@@ -15,7 +15,7 @@ En este módulo, se cubrirán dos métodos populares de PEFT:
 
 ### 1️⃣ LoRA (Adaptación de Bajo Rango)
 
-LoRA se ha convertido en el método PEFT más adoptado, ofreciendo una solución elegante para la adaptación eficiente de modelos. En lugar de modificar el modelo completo, **LoRA inyecta matrices entrenables en las capas de atención del modelo.** Este enfoque reduce típicamente los parámetros entrenables en aproximadamente un 90%, manteniendo un rendimiento comparable al *fine-tuning* completo. Exploraremos LoRA en la sección [LoRA (Adaptación de Bajo Rango)](./lora_adapters.md).
+LoRA se ha convertido en el método PEFT más adoptado, ofreciendo una solución sofisticada para la adaptación eficiente de modelos. En lugar de modificar el modelo completo, **LoRA inyecta matrices entrenables en las capas de atención del modelo.** Este enfoque, por lo general, reduce los parámetros entrenables en aproximadamente un 90%, manteniendo un rendimiento comparable al *fine-tuning* completo. Exploraremos LoRA en la sección [LoRA (Adaptación de Bajo Rango)](./lora_adapters.md).
 
 ### 2️⃣ *Prompt Tuning*
 
