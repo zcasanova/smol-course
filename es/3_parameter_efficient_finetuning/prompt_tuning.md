@@ -30,7 +30,7 @@ tokenizer = AutoTokenizer.from_pretrained("your-base-model")
 peft_config = PromptTuningConfig(
     task_type=TaskType.CAUSAL_LM,
     num_virtual_tokens=8,  # Número de tokens entrenables
-    prompt_tuning_init="TEXT",  # Inicializar a partir de texto
+    prompt_tuning_init="TEXT",  # Inicializa a partir de texto
     prompt_tuning_init_text="Clasifique si este texto es positivo o negativo:",
     tokenizer_name_or_path="your-base-model",
 )
