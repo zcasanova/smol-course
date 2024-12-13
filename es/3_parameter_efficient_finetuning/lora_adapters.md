@@ -1,6 +1,6 @@
 # LoRA (Adaptación de Bajo Rango) 
 
-LoRA (Low-Rank Adaptation) se ha convertido en el método PEFT más utilizado. Su funcionamiento se basa en añadir matrices de descomposición de rango reducido a los pesos de atención, lo que típicamente reduce los parámetros entrenables en un 90%.
+LoRA (Low-Rank Adaptation) se ha convertido en el método PEFT más utilizado. Su funcionamiento se basa en añadir matrices de descomposición de rango reducido a los pesos de atención, lo que suele reducir los parámetros entrenables en un 90%.
 
 ## Entendiendo LoRA
 
