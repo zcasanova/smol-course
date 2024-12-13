@@ -61,7 +61,7 @@ lora_config = LoraConfig(
 # Carga el modelo en un dispositivo específico
 model = AutoModelForCausalLM.from_pretrained(
     "your-model-name",
-    load_in_8bit=True,  # Opcional: usar precisión de 8 bits
+    load_in_8bit=True,  # Opcional: usa la precisión de 8 bits
     device_map="auto",
     peft_config=lora_config
 )
