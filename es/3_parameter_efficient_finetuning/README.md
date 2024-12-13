@@ -5,7 +5,7 @@ A medida que los modelos de lenguaje se hacen más grandes, el *fine-tuning* tra
 El *fine-tuning* tradicional actualiza todos los parámetros del modelo durante el entrenamiento, lo cual resulta poco práctico para modelos grandes. Los métodos PEFT introducen enfoques para adaptar modelos utilizando una fracción mínima de parámetros entrenables, generalmente menos del 1% del tamaño original del modelo. Esta reducción dramática permite:
 
 - Realizar *fine-tuning* en hardware de consumo con memoria de GPU limitada.
-- Almacenar múltiples adaptaciones específicas de tareas de forma eficiente.
+- Almacenar eficientemente múltiples adaptaciones de tareas específicas.
 - Mejorar la generalización en escenarios con pocos datos.
 - Entrenamientos y ciclos de iteración más rápidos.
 
