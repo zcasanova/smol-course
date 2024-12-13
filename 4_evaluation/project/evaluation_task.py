@@ -38,12 +38,18 @@ def prompt_fn(line, task_name: str = None):
 # Existing metrics can be imported from lighteval.metrics.metrics
 ################################################################################
 
+
+def sample_level_fn(formatted_doc: Doc, **kwargs) -> bool:
+    response = np.argmin(kwargs["choices_logprob"])
+    return response == formatted_doc.gold_index
+
+
 custom_metric = SampleLevelMetric(
     metric_name="exam_question_accuracy",
     higher_is_better=True,
     category=MetricCategory.MULTICHOICE,
     use_case=MetricUseCase.NONE,
-    sample_level_fn=lambda x: float(x["prediction"] == x["gold"]),
+    sample_level_fn=sample_level_fn,
     corpus_level_fn=np.mean,
 )
 
