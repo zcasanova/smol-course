@@ -31,7 +31,7 @@
 | [Instruction Tuning](./1_instruction_tuning) | 지도 학습 기반 미세 조정, 대화 템플릿 작성, 기본적인 지시를 따르게 하는 방법 학습 | ✅ 학습 가능 | 2024. 12. 3 |
 | [Preference Alignment](./2_preference_alignment) | 모델을 인간 선호도에 맞게 정렬하기 위한 DPO와 ORPO 기법 학습 | ✅ 학습 가능 | 2024. 12. 6 |
 | [Parameter-efficient Fine-tuning](./3_parameter_efficient_finetuning) | LoRA, 프롬프트 튜닝을 포함한 효율적인 적응 방법 학습 | ✅ 학습 가능 | 2024. 12. 9 |
-| [Evaluation](./4_evaluation) | 자동 벤치마크 사용법 및 사용자 정의 도메인 평가 수행 방법 학습 | [🚧 준비중](https://github.com/huggingface/smol-course/issues/42) | 2024. 12. 13 |
+| [Evaluation](./4_evaluation) | 자동 벤치마크 사용법 및 사용자 정의 도메인 평가 수행 방법 학습 | ✅ 학습 가능 | 2024. 12. 13 |
 | [Vision-language Models](./5_vision_language_models) | 비전-언어 태스크를 위한 멀티모달 모델 적용 방법 학습 | [🚧 준비중](https://github.com/huggingface/smol-course/issues/49) | 2024. 12. 16 |
 | [Synthetic Datasets](./6_synthetic_datasets) | 모델 학습을 위한 합성 데이터셋 생성 및 검증 | [🚧 준비중](https://github.com/huggingface/smol-course/issues/83) | 2024. 12. 20 |
 | [Inference](./7_inference) | 모델의 효율적인 추론 방법 학습 | 📝 작성 예정 | 2024. 12. 23 |
