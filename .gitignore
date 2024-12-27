@@ -1,4 +1,7 @@
 # Byte-compiled / optimized / DLL files
+1_instruction_tuning/notebooks/batch_process_data.ipynb
+1_instruction_tuning/notebooks/distalable-qa-gen.ipynb
+
 __pycache__/
 *.py[cod]
 *$py.class
